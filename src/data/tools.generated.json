@@ -1,0 +1,2877 @@
+{
+  "categories": [
+    {
+      "id": "clipboard",
+      "name": "Clipboard",
+      "description": "Clipboard history and management",
+      "icon": "ClipboardIcon",
+      "order": 10
+    },
+    {
+      "id": "text",
+      "name": "Text",
+      "description": "Text formatting, conversion and analysis",
+      "icon": "TypeIcon",
+      "order": 20
+    },
+    {
+      "id": "developer",
+      "name": "Developer",
+      "description": "JSON, JWT, regex and code utilities",
+      "icon": "CodeIcon",
+      "order": 30
+    },
+    {
+      "id": "qa",
+      "name": "QA",
+      "description": "XPath, selectors, element inspection",
+      "icon": "FlaskConicalIcon",
+      "order": 40
+    },
+    {
+      "id": "api",
+      "name": "API & HTTP",
+      "description": "HTTP client, responses, history and API utilities",
+      "icon": "NetworkIcon",
+      "order": 45
+    },
+    {
+      "id": "web",
+      "name": "Web",
+      "description": "URLs, links, images and page metadata",
+      "icon": "GlobeIcon",
+      "order": 50
+    },
+    {
+      "id": "data",
+      "name": "Data Conversion",
+      "description": "Convert between JSON, CSV, XML, YAML and more",
+      "icon": "BlocksIcon",
+      "order": 55
+    },
+    {
+      "id": "design",
+      "name": "Design",
+      "description": "Colors, typography, layout helpers",
+      "icon": "PaletteIcon",
+      "order": 60
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "description": "Hashing, encoding, headers",
+      "icon": "ShieldIcon",
+      "order": 70
+    },
+    {
+      "id": "privacy",
+      "name": "Privacy",
+      "description": "Ad blocking and browsing privacy",
+      "icon": "ShieldBanIcon",
+      "order": 72
+    },
+    {
+      "id": "sites",
+      "name": "Site Enhancements",
+      "description": "Per-site tweaks and control panels",
+      "icon": "SparklesIcon",
+      "order": 73
+    },
+    {
+      "id": "calculators",
+      "name": "Calculators",
+      "description": "Math, unit and base converters",
+      "icon": "CalculatorIcon",
+      "order": 80
+    },
+    {
+      "id": "datetime",
+      "name": "Date & Time",
+      "description": "Timestamps, date math, timezones and cron",
+      "icon": "CalendarClockIcon",
+      "order": 85
+    },
+    {
+      "id": "screenshots",
+      "name": "Screenshots",
+      "description": "Capture and annotate pages",
+      "icon": "CameraIcon",
+      "order": 90
+    },
+    {
+      "id": "image",
+      "name": "Image",
+      "description": "Resize, crop, convert and inspect images",
+      "icon": "ImageIcon",
+      "order": 95
+    },
+    {
+      "id": "files",
+      "name": "Files",
+      "description": "File conversion and inspection",
+      "icon": "FileIcon",
+      "order": 100
+    },
+    {
+      "id": "generators",
+      "name": "Generators",
+      "description": "QR codes and generated content",
+      "icon": "BlocksIcon",
+      "order": 105
+    },
+    {
+      "id": "seo",
+      "name": "SEO",
+      "description": "Page, heading, link and meta analysis",
+      "icon": "SearchCheckIcon",
+      "order": 108
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "description": "Timers, notes and workflow helpers",
+      "icon": "ZapIcon",
+      "order": 110
+    },
+    {
+      "id": "browser",
+      "name": "Browser",
+      "description": "Tab, page and navigation utilities",
+      "icon": "PanelsTopLeftIcon",
+      "order": 115
+    },
+    {
+      "id": "storage",
+      "name": "Storage",
+      "description": "localStorage and sessionStorage inspection",
+      "icon": "DatabaseIcon",
+      "order": 118
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessibility",
+      "description": "Contrast, headings and page checks",
+      "icon": "AccessibilityIcon",
+      "order": 120
+    }
+  ],
+  "tools": [
+    {
+      "id": "clipboard.manager",
+      "name": "Clipboard Manager",
+      "description": "View, pin and manage everything you copy.",
+      "category": "clipboard",
+      "categorySlug": "clipboard",
+      "slug": "manager",
+      "route": "/tools/clipboard/manager",
+      "icon": "ClipboardPasteIcon",
+      "keywords": [
+        "clipboard",
+        "manager",
+        "paste",
+        "copy",
+        "history",
+        "pinned",
+        "search"
+      ],
+      "aliases": [
+        "clipboard history",
+        "copy history",
+        "clipboard manager"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CLIPBOARD",
+        "STORAGE"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "text.formatter",
+      "name": "Code Formatter",
+      "description": "Format and minify JavaScript, TypeScript, HTML, XML, CSS and Markdown (use JSON Toolkit for JSON).",
+      "category": "text",
+      "categorySlug": "text",
+      "slug": "formatter",
+      "route": "/tools/text/formatter",
+      "icon": "AlignLeftIcon",
+      "keywords": [
+        "format",
+        "beautify",
+        "minify",
+        "javascript",
+        "typescript",
+        "html",
+        "xml",
+        "css",
+        "markdown",
+        "text"
+      ],
+      "aliases": [
+        "prettier",
+        "beautifier",
+        "minifier",
+        "pretty print",
+        "code formatter"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "text.case-converter",
+      "name": "Case Converter",
+      "description": "Convert between camelCase, snake_case, Title Case and more.",
+      "category": "text",
+      "categorySlug": "text",
+      "slug": "case-converter",
+      "route": "/tools/text/case-converter",
+      "icon": "CaseSensitiveIcon",
+      "keywords": [
+        "case",
+        "camel",
+        "snake",
+        "kebab",
+        "pascal",
+        "upper",
+        "lower",
+        "title"
+      ],
+      "aliases": [
+        "uppercase",
+        "lowercase",
+        "title case",
+        "sentence case",
+        "constant case",
+        "dot case"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "text.whitespace-cleaner",
+      "name": "Text Cleaner",
+      "description": "Trim, clean and normalize whitespace, spaces and line breaks.",
+      "category": "text",
+      "categorySlug": "text",
+      "slug": "whitespace-cleaner",
+      "route": "/tools/text/whitespace-cleaner",
+      "icon": "WrapTextIcon",
+      "keywords": [
+        "whitespace",
+        "spaces",
+        "trim",
+        "blank lines",
+        "clean",
+        "normalize",
+        "leading",
+        "trailing"
+      ],
+      "aliases": [
+        "text cleaner",
+        "clean text",
+        "strip spaces",
+        "remove blank lines",
+        "normalize line breaks"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "text.analyzer",
+      "name": "Text Analyzer",
+      "description": "Words, characters, lines, sentences, reading time and readability metrics.",
+      "category": "text",
+      "categorySlug": "text",
+      "slug": "analyzer",
+      "route": "/tools/text/analyzer",
+      "icon": "HashIcon",
+      "keywords": [
+        "word",
+        "count",
+        "characters",
+        "lines",
+        "sentences",
+        "paragraphs",
+        "reading time",
+        "statistics",
+        "analyze"
+      ],
+      "aliases": [
+        "word count",
+        "count words",
+        "character count",
+        "line count",
+        "word counter",
+        "line counter",
+        "text statistics",
+        "wc"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "text.line-tools",
+      "name": "Line Tools",
+      "description": "Deduplicate, sort, reverse, shuffle and number lines.",
+      "category": "text",
+      "categorySlug": "text",
+      "slug": "line-tools",
+      "route": "/tools/text/line-tools",
+      "icon": "ArrowUpDownIcon",
+      "keywords": [
+        "lines",
+        "dedupe",
+        "duplicate",
+        "unique",
+        "sort",
+        "order",
+        "reverse",
+        "shuffle",
+        "number",
+        "empty"
+      ],
+      "aliases": [
+        "duplicate line remover",
+        "remove duplicate lines",
+        "sort lines",
+        "reverse lines",
+        "shuffle lines",
+        "line numbers",
+        "remove empty lines"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "text.find-replace",
+      "name": "Find & Replace",
+      "description": "Find and replace with regex, case and whole-word options.",
+      "category": "text",
+      "categorySlug": "text",
+      "slug": "find-replace",
+      "route": "/tools/text/find-replace",
+      "icon": "ReplaceIcon",
+      "keywords": [
+        "find",
+        "replace",
+        "search",
+        "regex"
+      ],
+      "aliases": [
+        "search and replace",
+        "substitute",
+        "sed"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "text.diff",
+      "name": "Text Diff",
+      "description": "Compare two texts and highlight additions and removals.",
+      "category": "text",
+      "categorySlug": "text",
+      "slug": "diff",
+      "route": "/tools/text/diff",
+      "icon": "DiffIcon",
+      "keywords": [
+        "diff",
+        "compare",
+        "changes",
+        "added",
+        "removed"
+      ],
+      "aliases": [
+        "compare text",
+        "difference",
+        "text comparison"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "text.read-aloud",
+      "name": "Read Aloud",
+      "description": "Listen to page text with built-in speech synthesis and adjustable speed.",
+      "category": "text",
+      "categorySlug": "text",
+      "slug": "read-aloud",
+      "route": "/tools/text/read-aloud",
+      "icon": "Volume2Icon",
+      "keywords": [
+        "read aloud",
+        "tts",
+        "speech",
+        "accessibility",
+        "listen"
+      ],
+      "aliases": [
+        "text to speech",
+        "speechify"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "text.dummy-data",
+      "name": "Dummy Data",
+      "description": "Generate lorem ipsum, random text, names, emails, and UUIDs with HTML, Markdown, or JSON export.",
+      "category": "text",
+      "categorySlug": "text",
+      "slug": "dummy-data",
+      "route": "/tools/text/dummy-data",
+      "icon": "TypeIcon",
+      "keywords": [
+        "lorem",
+        "ipsum",
+        "placeholder",
+        "dummy",
+        "random",
+        "generate",
+        "text"
+      ],
+      "aliases": [
+        "lorem ipsum",
+        "random text",
+        "random words",
+        "random sentences",
+        "fake text",
+        "placeholder text"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "developer.react-devtools",
+      "name": "React DevTools",
+      "description": "Inspect and profile React apps from Chrome DevTools with toolbox styling.",
+      "category": "developer",
+      "categorySlug": "developer",
+      "slug": "react-devtools",
+      "route": "/tools/developer/react-devtools",
+      "icon": "AtomIcon",
+      "keywords": [
+        "react",
+        "devtools",
+        "components",
+        "profiler",
+        "debug",
+        "inspect",
+        "hooks"
+      ],
+      "aliases": [
+        "react developer tools",
+        "react inspector",
+        "react profiler"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "DEVTOOLS",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "beta"
+    },
+    {
+      "id": "developer.json-toolkit",
+      "name": "JSON Toolkit",
+      "description": "Validate, format, minify, tree-view, path-query and convert JSON.",
+      "category": "developer",
+      "categorySlug": "developer",
+      "slug": "json-toolkit",
+      "route": "/tools/developer/json-toolkit",
+      "icon": "BracesIcon",
+      "keywords": [
+        "json",
+        "validate",
+        "format",
+        "beautify",
+        "minify",
+        "tree",
+        "path",
+        "convert",
+        "csv",
+        "xml",
+        "typescript"
+      ],
+      "aliases": [
+        "json formatter",
+        "json validator",
+        "json beautifier",
+        "json minifier",
+        "json to csv",
+        "json to typescript",
+        "json path"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU",
+        "COMMAND"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "developer.xml-toolkit",
+      "name": "XML Toolkit",
+      "description": "Validate, format, minify XML and convert XML to JSON.",
+      "category": "developer",
+      "categorySlug": "developer",
+      "slug": "xml-toolkit",
+      "route": "/tools/developer/xml-toolkit",
+      "icon": "FileJsonIcon",
+      "keywords": [
+        "xml",
+        "validate",
+        "format",
+        "minify",
+        "json",
+        "convert"
+      ],
+      "aliases": [
+        "xml formatter",
+        "xml validator",
+        "xml to json"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "developer.yaml-toolkit",
+      "name": "YAML Toolkit",
+      "description": "Validate and format YAML, convert between YAML and JSON.",
+      "category": "developer",
+      "categorySlug": "developer",
+      "slug": "yaml-toolkit",
+      "route": "/tools/developer/yaml-toolkit",
+      "icon": "CodeIcon",
+      "keywords": [
+        "yaml",
+        "yml",
+        "validate",
+        "format",
+        "json",
+        "convert"
+      ],
+      "aliases": [
+        "yaml validator",
+        "yaml to json",
+        "json to yaml"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "developer.sql-toolkit",
+      "name": "SQL Toolkit",
+      "description": "Format and minify SQL across dialects.",
+      "category": "developer",
+      "categorySlug": "developer",
+      "slug": "sql-toolkit",
+      "route": "/tools/developer/sql-toolkit",
+      "icon": "DatabaseIcon",
+      "keywords": [
+        "sql",
+        "format",
+        "minify",
+        "query",
+        "dialect",
+        "database"
+      ],
+      "aliases": [
+        "sql formatter",
+        "sql beautifier",
+        "sql minifier",
+        "query formatter"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "developer.regex-toolkit",
+      "name": "Regex Toolkit",
+      "description": "Test, replace and explain regular expressions with a pattern library.",
+      "category": "developer",
+      "categorySlug": "developer",
+      "slug": "regex-toolkit",
+      "route": "/tools/developer/regex-toolkit",
+      "icon": "RegexIcon",
+      "keywords": [
+        "regex",
+        "regexp",
+        "pattern",
+        "match",
+        "replace",
+        "groups",
+        "test"
+      ],
+      "aliases": [
+        "regex tester",
+        "regular expression",
+        "regex101",
+        "regex replace",
+        "regex patterns"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "developer.id-toolkit",
+      "name": "UUID / ID Toolkit",
+      "description": "Generate and validate UUIDs (v4/v7) and NanoID identifiers.",
+      "category": "developer",
+      "categorySlug": "developer",
+      "slug": "id-toolkit",
+      "route": "/tools/developer/id-toolkit",
+      "icon": "HashIcon",
+      "keywords": [
+        "uuid",
+        "guid",
+        "id",
+        "nanoid",
+        "generate",
+        "validate",
+        "random"
+      ],
+      "aliases": [
+        "uuid generator",
+        "guid generator",
+        "uuid v4",
+        "uuid v7",
+        "nanoid",
+        "random id"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "qa.element-inspector",
+      "name": "Element Inspector",
+      "description": "Pick a page element and inspect its tag, attributes, styles and dimensions.",
+      "category": "qa",
+      "categorySlug": "qa",
+      "slug": "element-inspector",
+      "route": "/tools/qa/element-inspector",
+      "icon": "MousePointerClickIcon",
+      "keywords": [
+        "element",
+        "inspect",
+        "dom",
+        "attributes",
+        "styles",
+        "picker"
+      ],
+      "aliases": [
+        "inspect element",
+        "element picker",
+        "dom inspector",
+        "element info"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS",
+        "DEVTOOLS",
+        "COMMAND"
+      ],
+      "contextSurfaces": [
+        "PAGE",
+        "ELEMENT",
+        "OVERLAY"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "qa.selector-generator",
+      "name": "Selector Generator",
+      "description": "Generate CSS and XPath selectors for any page element.",
+      "category": "qa",
+      "categorySlug": "qa",
+      "slug": "selector-generator",
+      "route": "/tools/qa/selector-generator",
+      "icon": "CrosshairIcon",
+      "keywords": [
+        "css",
+        "selector",
+        "xpath",
+        "generate",
+        "locator",
+        "element"
+      ],
+      "aliases": [
+        "css selector",
+        "xpath generator",
+        "selector builder",
+        "locator",
+        "selenium locator"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS",
+        "DEVTOOLS",
+        "COMMAND"
+      ],
+      "contextSurfaces": [
+        "PAGE",
+        "ELEMENT",
+        "OVERLAY"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "qa.xpath-tester",
+      "name": "XPath Tester",
+      "description": "Evaluate an XPath on the current page and see matching elements.",
+      "category": "qa",
+      "categorySlug": "qa",
+      "slug": "xpath-tester",
+      "route": "/tools/qa/xpath-tester",
+      "icon": "ListChecksIcon",
+      "keywords": [
+        "xpath",
+        "test",
+        "evaluate",
+        "match",
+        "dom",
+        "query"
+      ],
+      "aliases": [
+        "xpath tester",
+        "xpath evaluator",
+        "test xpath"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [
+        "PAGE",
+        "ELEMENT"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "qa.test-data-generator",
+      "name": "Test Data Generator",
+      "description": "Generate names, emails, addresses and more as JSON or CSV.",
+      "category": "qa",
+      "categorySlug": "qa",
+      "slug": "test-data-generator",
+      "route": "/tools/qa/test-data-generator",
+      "icon": "TestTube2Icon",
+      "keywords": [
+        "test data",
+        "fake",
+        "generate",
+        "name",
+        "email",
+        "address",
+        "mock"
+      ],
+      "aliases": [
+        "faker",
+        "test data",
+        "fake data",
+        "mock data",
+        "sample data"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "qa.http-status",
+      "name": "HTTP Status Codes",
+      "description": "Look up HTTP status codes with meaning and debugging hints.",
+      "category": "qa",
+      "categorySlug": "qa",
+      "slug": "http-status",
+      "route": "/tools/qa/http-status",
+      "icon": "ServerIcon",
+      "keywords": [
+        "http",
+        "status",
+        "code",
+        "404",
+        "500",
+        "error",
+        "response"
+      ],
+      "aliases": [
+        "http status",
+        "status code",
+        "404",
+        "http codes",
+        "http error"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "qa.bug-reporter",
+      "name": "Bug Reporter",
+      "description": "Capture page context and write a copyable bug report.",
+      "category": "qa",
+      "categorySlug": "qa",
+      "slug": "bug-reporter",
+      "route": "/tools/qa/bug-reporter",
+      "icon": "BugIcon",
+      "keywords": [
+        "bug",
+        "report",
+        "defect",
+        "issue",
+        "expected",
+        "actual",
+        "steps"
+      ],
+      "aliases": [
+        "bug report",
+        "file a bug",
+        "defect report",
+        "issue template"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "PAGE_ACCESS",
+        "SCREEN_CAPTURE"
+      ],
+      "contextSurfaces": [
+        "PAGE"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "api.http-interceptor",
+      "name": "HTTP Interceptor",
+      "description": "Intercept and modify HTTP(S) traffic: redirects, headers, API mocks, GraphQL overrides, script injection, and a live network log.",
+      "category": "api",
+      "categorySlug": "api",
+      "slug": "http-interceptor",
+      "route": "/tools/api/http-interceptor",
+      "icon": "RadarIcon",
+      "keywords": [
+        "requestly",
+        "interceptor",
+        "mock",
+        "redirect",
+        "headers",
+        "network",
+        "graphql",
+        "xhr",
+        "fetch"
+      ],
+      "aliases": [
+        "http interceptor",
+        "requestly",
+        "mock api",
+        "modify headers",
+        "network log"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "DEVTOOLS",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "api.request-builder",
+      "name": "API Request Builder",
+      "description": "Full API client with collections, environments, scripts, and request history (Postman Lite).",
+      "category": "api",
+      "categorySlug": "api",
+      "slug": "request-builder",
+      "route": "/tools/api/request-builder",
+      "icon": "NetworkIcon",
+      "keywords": [
+        "api",
+        "http",
+        "request",
+        "rest",
+        "client",
+        "endpoint",
+        "response",
+        "history"
+      ],
+      "aliases": [
+        "api client",
+        "http client",
+        "rest client",
+        "request builder",
+        "postman"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.url-toolkit",
+      "name": "URL Toolkit",
+      "description": "Parse, encode, decode and clean URLs with a query-param editor.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "url-toolkit",
+      "route": "/tools/web/url-toolkit",
+      "icon": "LinkIcon",
+      "keywords": [
+        "url",
+        "parse",
+        "encode",
+        "decode",
+        "query",
+        "params",
+        "clean",
+        "utm"
+      ],
+      "aliases": [
+        "url parser",
+        "url encoder",
+        "query string",
+        "url decoder",
+        "utm remover",
+        "clean url"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU",
+        "COMMAND"
+      ],
+      "contextSurfaces": [
+        "SELECTION",
+        "LINK"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.link-toolkit",
+      "name": "Link Toolkit",
+      "description": "Extract internal and external links from the current page.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "link-toolkit",
+      "route": "/tools/web/link-toolkit",
+      "icon": "Link2Icon",
+      "keywords": [
+        "links",
+        "extract",
+        "internal",
+        "external",
+        "urls",
+        "page"
+      ],
+      "aliases": [
+        "extract links",
+        "page links",
+        "all links",
+        "link extractor"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [
+        "PAGE"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.image-links",
+      "name": "Image Links",
+      "description": "Preview every image on the page, audit alt text, export the list, and download images or a ZIP.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "image-links",
+      "route": "/tools/web/image-links",
+      "icon": "ImageIcon",
+      "keywords": [
+        "images",
+        "extract",
+        "alt",
+        "dimensions",
+        "urls",
+        "preview",
+        "zip",
+        "download",
+        "csv",
+        "export"
+      ],
+      "aliases": [
+        "extract images",
+        "page images",
+        "image urls",
+        "image alt",
+        "export images",
+        "images zip"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [
+        "PAGE",
+        "IMAGE"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.page-info",
+      "name": "Page Information",
+      "description": "Title, meta, canonical, Open Graph and Twitter card details for the page.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "page-info",
+      "route": "/tools/web/page-info",
+      "icon": "InfoIcon",
+      "keywords": [
+        "page",
+        "info",
+        "meta",
+        "canonical",
+        "open graph",
+        "twitter",
+        "seo"
+      ],
+      "aliases": [
+        "page info",
+        "meta tags",
+        "open graph",
+        "og tags",
+        "page details"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [
+        "PAGE"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.tech-stack",
+      "name": "Tech Stack Detective",
+      "description": "Detect frameworks, CMS, analytics, and CDNs used on the active page.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "tech-stack",
+      "route": "/tools/web/tech-stack",
+      "icon": "InfoIcon",
+      "keywords": [
+        "wappalyzer",
+        "tech stack",
+        "react",
+        "wordpress",
+        "shopify",
+        "framework"
+      ],
+      "aliases": [
+        "technology lookup",
+        "stack detector"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.redirect-tracer",
+      "name": "Redirect Hop Tracer",
+      "description": "Trace redirect chains and navigation hops for the active tab.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "redirect-tracer",
+      "route": "/tools/web/redirect-tracer",
+      "icon": "Link2Icon",
+      "keywords": [
+        "redirect",
+        "301",
+        "302",
+        "hop",
+        "redirect path"
+      ],
+      "aliases": [
+        "redirect path",
+        "redirect checker"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.link-checker",
+      "name": "Broken Link Checker",
+      "description": "Check HTTP status of links on the current page.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "link-checker",
+      "route": "/tools/web/link-checker",
+      "icon": "LinkIcon",
+      "keywords": [
+        "broken links",
+        "404",
+        "link checker",
+        "checkbot"
+      ],
+      "aliases": [
+        "link status",
+        "dead links"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.utm-builder",
+      "name": "UTM Campaign Builder",
+      "description": "Build campaign URLs with UTM parameters and QR preview.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "utm-builder",
+      "route": "/tools/web/utm-builder",
+      "icon": "LinkIcon",
+      "keywords": [
+        "utm",
+        "campaign",
+        "marketing",
+        "qr",
+        "tracking url"
+      ],
+      "aliases": [
+        "utm builder",
+        "campaign url"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.copy-markdown",
+      "name": "Copy as Markdown",
+      "description": "Convert page selection or article content to Markdown.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "copy-markdown",
+      "route": "/tools/web/copy-markdown",
+      "icon": "ArchiveIcon",
+      "keywords": [
+        "markdown",
+        "copy",
+        "clip",
+        "notion",
+        "obsidian"
+      ],
+      "aliases": [
+        "html to markdown",
+        "copy markdown"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION",
+        "PAGE"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "web.html-bundle",
+      "name": "HTML Bundle Downloader",
+      "description": "Download the current page and selected linked HTML reports as an offline ZIP with assets.",
+      "category": "web",
+      "categorySlug": "web",
+      "slug": "html-bundle",
+      "route": "/tools/web/html-bundle",
+      "icon": "ArchiveIcon",
+      "keywords": [
+        "html",
+        "download",
+        "zip",
+        "archive",
+        "cucumber",
+        "report",
+        "offline",
+        "bundle"
+      ],
+      "aliases": [
+        "save page",
+        "download html",
+        "html zip",
+        "cucumber report",
+        "report bundle",
+        "offline archive"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS",
+        "COMMAND"
+      ],
+      "contextSurfaces": [
+        "PAGE"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "data.universal-converter",
+      "name": "Universal Converter",
+      "description": "Convert between JSON, CSV, XML, YAML, Markdown tables and TSV.",
+      "category": "data",
+      "categorySlug": "data",
+      "slug": "universal-converter",
+      "route": "/tools/data/universal-converter",
+      "icon": "ArrowLeftRightIcon",
+      "keywords": [
+        "convert",
+        "json",
+        "csv",
+        "xml",
+        "yaml",
+        "markdown",
+        "tsv",
+        "format"
+      ],
+      "aliases": [
+        "json to csv",
+        "csv to json",
+        "json to yaml",
+        "xml to json",
+        "data converter",
+        "format converter"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "data.data-scraper",
+      "name": "Data Scraper",
+      "description": "Extract tables and lists from any site with heuristics, point-and-click selectors, pagination, and CSV/Excel export.",
+      "category": "data",
+      "categorySlug": "data",
+      "slug": "data-scraper",
+      "route": "/tools/data/data-scraper",
+      "icon": "TableIcon",
+      "keywords": [
+        "scrape",
+        "scraper",
+        "instant data scraper",
+        "web scraper",
+        "table",
+        "csv",
+        "excel",
+        "xlsx",
+        "pagination",
+        "crawl"
+      ],
+      "aliases": [
+        "instant data scraper",
+        "data miner",
+        "table to csv",
+        "export to excel"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "PAGE_ACCESS",
+        "CONTENT_SCRIPT"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "design.color-converter",
+      "name": "Color Converter",
+      "description": "Convert colors between HEX, RGB, HSL, HSV, HWB and CMYK.",
+      "category": "design",
+      "categorySlug": "design",
+      "slug": "color-converter",
+      "route": "/tools/design/color-converter",
+      "icon": "PaintbrushIcon",
+      "keywords": [
+        "color",
+        "hex",
+        "rgb",
+        "hsl",
+        "hsv",
+        "hwb",
+        "cmyk",
+        "convert"
+      ],
+      "aliases": [
+        "hex to rgb",
+        "rgb to hex",
+        "color converter",
+        "hex to hsl",
+        "color format"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "design.color-picker",
+      "name": "Color Picker",
+      "description": "Pick a color from the screen or a swatch, copy as HEX/RGB/HSL.",
+      "category": "design",
+      "categorySlug": "design",
+      "slug": "color-picker",
+      "route": "/tools/design/color-picker",
+      "icon": "PipetteIcon",
+      "keywords": [
+        "color",
+        "picker",
+        "eyedropper",
+        "screen",
+        "swatch"
+      ],
+      "aliases": [
+        "color picker",
+        "eyedropper",
+        "pick color",
+        "color dropper"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "design.palette-generator",
+      "name": "Palette Generator",
+      "description": "Generate complementary, analogous, triadic, monochromatic and random palettes.",
+      "category": "design",
+      "categorySlug": "design",
+      "slug": "palette-generator",
+      "route": "/tools/design/palette-generator",
+      "icon": "PaletteIcon",
+      "keywords": [
+        "palette",
+        "color",
+        "scheme",
+        "complementary",
+        "analogous",
+        "triadic",
+        "monochromatic"
+      ],
+      "aliases": [
+        "color palette",
+        "color scheme",
+        "palette generator",
+        "color harmony"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "design.contrast-checker",
+      "name": "Contrast Checker",
+      "description": "WCAG contrast ratio between foreground and background colors.",
+      "category": "design",
+      "categorySlug": "design",
+      "slug": "contrast-checker",
+      "route": "/tools/design/contrast-checker",
+      "icon": "ContrastIcon",
+      "keywords": [
+        "contrast",
+        "wcag",
+        "accessibility",
+        "aa",
+        "aaa",
+        "color",
+        "ratio"
+      ],
+      "aliases": [
+        "contrast checker",
+        "wcag contrast",
+        "color contrast",
+        "accessibility contrast"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "design.font-inspector",
+      "name": "Font Inspector",
+      "description": "Hover any text on the page to see font family, size, weight, and line height.",
+      "category": "design",
+      "categorySlug": "design",
+      "slug": "font-inspector",
+      "route": "/tools/design/font-inspector",
+      "icon": "TypeIcon",
+      "keywords": [
+        "whatfont",
+        "font",
+        "typography",
+        "inspector"
+      ],
+      "aliases": [
+        "font inspector",
+        "what font"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "design.responsive-viewer",
+      "name": "Responsive Viewer",
+      "description": "Preview the active URL in multiple device viewports side by side.",
+      "category": "design",
+      "categorySlug": "design",
+      "slug": "responsive-viewer",
+      "route": "/tools/design/responsive-viewer",
+      "icon": "LayoutTemplateIcon",
+      "keywords": [
+        "responsive",
+        "viewport",
+        "mobile",
+        "iframe",
+        "devices"
+      ],
+      "aliases": [
+        "responsive viewer",
+        "device preview"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "design.svg-grabber",
+      "name": "SVG Grabber",
+      "description": "Extract inline SVGs from the page and copy as SVG or JSX.",
+      "category": "design",
+      "categorySlug": "design",
+      "slug": "svg-grabber",
+      "route": "/tools/design/svg-grabber",
+      "icon": "ScanIcon",
+      "keywords": [
+        "svg",
+        "icon",
+        "grabber",
+        "jsx"
+      ],
+      "aliases": [
+        "svg export",
+        "svg grabber"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "design.layout-wireframe",
+      "name": "Layout Wireframe",
+      "description": "Toggle colored outlines on all elements to debug layout and spacing.",
+      "category": "design",
+      "categorySlug": "design",
+      "slug": "layout-wireframe",
+      "route": "/tools/design/layout-wireframe",
+      "icon": "Grid3x3Icon",
+      "keywords": [
+        "pesticide",
+        "outline",
+        "wireframe",
+        "layout",
+        "debug"
+      ],
+      "aliases": [
+        "layout wireframe",
+        "css outline"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "design.css-generator",
+      "name": "CSS Generator",
+      "description": "Generate gradients, box shadows, border radius and glass effects.",
+      "category": "design",
+      "categorySlug": "design",
+      "slug": "css-generator",
+      "route": "/tools/design/css-generator",
+      "icon": "WandIcon",
+      "keywords": [
+        "css",
+        "gradient",
+        "shadow",
+        "border radius",
+        "glass",
+        "generator"
+      ],
+      "aliases": [
+        "gradient generator",
+        "box shadow",
+        "border radius",
+        "glassmorphism",
+        "css generator"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "security.encoder-decoder",
+      "name": "Encoder / Decoder",
+      "description": "Base64, URL, HTML, Unicode and Hex encoding and decoding.",
+      "category": "security",
+      "categorySlug": "security",
+      "slug": "encoder-decoder",
+      "route": "/tools/security/encoder-decoder",
+      "icon": "BinaryIcon",
+      "keywords": [
+        "base64",
+        "url",
+        "html",
+        "unicode",
+        "hex",
+        "encode",
+        "decode",
+        "escape"
+      ],
+      "aliases": [
+        "base64 encode",
+        "base64 decode",
+        "url encode",
+        "html entities",
+        "hex encode"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU",
+        "COMMAND"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "security.hash-toolkit",
+      "name": "Hash Toolkit",
+      "description": "SHA and MD5 hashing plus HMAC, all computed locally.",
+      "category": "security",
+      "categorySlug": "security",
+      "slug": "hash-toolkit",
+      "route": "/tools/security/hash-toolkit",
+      "icon": "HashIcon",
+      "keywords": [
+        "hash",
+        "sha",
+        "sha256",
+        "md5",
+        "hmac",
+        "digest",
+        "checksum"
+      ],
+      "aliases": [
+        "sha256",
+        "sha-256",
+        "md5 hash",
+        "hmac",
+        "hash generator",
+        "checksum"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "security.jwt-toolkit",
+      "name": "JWT Toolkit",
+      "description": "Decode and inspect JSON Web Tokens: header, payload, claims and expiry.",
+      "category": "security",
+      "categorySlug": "security",
+      "slug": "jwt-toolkit",
+      "route": "/tools/security/jwt-toolkit",
+      "icon": "TicketIcon",
+      "keywords": [
+        "jwt",
+        "token",
+        "decode",
+        "claims",
+        "expiry",
+        "bearer"
+      ],
+      "aliases": [
+        "jwt decoder",
+        "jwt decode",
+        "json web token",
+        "jwt inspector",
+        "jwt.io"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU",
+        "COMMAND"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "security.password-generator",
+      "name": "Password Generator",
+      "description": "Generate cryptographically random passwords with charset options.",
+      "category": "security",
+      "categorySlug": "security",
+      "slug": "password-generator",
+      "route": "/tools/security/password-generator",
+      "icon": "KeyRoundIcon",
+      "keywords": [
+        "password",
+        "generate",
+        "random",
+        "secure",
+        "symbols"
+      ],
+      "aliases": [
+        "password generator",
+        "secure password",
+        "random password",
+        "strong password"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "security.totp",
+      "name": "2FA Authenticator",
+      "description": "Generate time-based one-time passwords (TOTP) from stored secrets — computed locally.",
+      "category": "security",
+      "categorySlug": "security",
+      "slug": "totp",
+      "route": "/tools/security/totp",
+      "icon": "ShieldIcon",
+      "keywords": [
+        "totp",
+        "2fa",
+        "authenticator",
+        "otp",
+        "mfa"
+      ],
+      "aliases": [
+        "google authenticator",
+        "totp generator"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "STORAGE"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "security.random-generator",
+      "name": "Random Generator",
+      "description": "Cryptographically random numbers, strings, hex, UUIDs and NanoIDs.",
+      "category": "security",
+      "categorySlug": "security",
+      "slug": "random-generator",
+      "route": "/tools/security/random-generator",
+      "icon": "DicesIcon",
+      "keywords": [
+        "random",
+        "number",
+        "string",
+        "hex",
+        "bytes",
+        "token",
+        "uuid"
+      ],
+      "aliases": [
+        "random number",
+        "random string",
+        "random token",
+        "random hex",
+        "secure random"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "privacy.ad-blocker",
+      "name": "Ad Blocker",
+      "description": "Block ads and trackers on websites and YouTube. Per-site allowlist and filter lists.",
+      "category": "privacy",
+      "categorySlug": "privacy",
+      "slug": "ad-blocker",
+      "route": "/tools/privacy/ad-blocker",
+      "icon": "ShieldBanIcon",
+      "keywords": [
+        "adblock",
+        "ads",
+        "privacy",
+        "youtube",
+        "tracker",
+        "block"
+      ],
+      "aliases": [
+        "ublock",
+        "ad blocker",
+        "block ads"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "privacy.web-protection",
+      "name": "Web Protection",
+      "description": "Block known phishing, malware and scam sites. Warns on suspicious sign-in pages. On by default.",
+      "category": "privacy",
+      "categorySlug": "privacy",
+      "slug": "web-protection",
+      "route": "/tools/privacy/web-protection",
+      "icon": "ShieldCheckIcon",
+      "keywords": [
+        "phishing",
+        "malware",
+        "scam",
+        "security",
+        "safe browsing",
+        "360"
+      ],
+      "aliases": [
+        "web protection",
+        "internet protection",
+        "anti phishing"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "sites.youtube",
+      "name": "YouTube Control Panel",
+      "description": "Hide clutter, tune the player, custom progress bar, and optional SponsorBlock",
+      "category": "sites",
+      "categorySlug": "sites",
+      "slug": "youtube",
+      "route": "/tools/sites/youtube",
+      "icon": "PlaySquareIcon",
+      "keywords": [
+        "youtube",
+        "shorts",
+        "player",
+        "enhancer",
+        "sponsorblock",
+        "progress bar",
+        "feed"
+      ],
+      "aliases": [
+        "yt",
+        "control panel for youtube"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "sites.instagram",
+      "name": "Instagram Control Panel",
+      "description": "Reels player controls, media download, caption formatter, and ghost story viewing on instagram.com",
+      "category": "sites",
+      "categorySlug": "sites",
+      "slug": "instagram",
+      "route": "/tools/sites/instagram",
+      "icon": "ImageIcon",
+      "keywords": [
+        "instagram",
+        "reels",
+        "stories",
+        "download",
+        "caption",
+        "inssist"
+      ],
+      "aliases": [
+        "ig tools",
+        "instagram enhancer"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "sites.twitter",
+      "name": "X / Twitter Power Tools",
+      "description": "Advanced search operators and thread length counter for x.com",
+      "category": "sites",
+      "categorySlug": "sites",
+      "slug": "twitter",
+      "route": "/tools/sites/twitter",
+      "icon": "AtSignIcon",
+      "keywords": [
+        "twitter",
+        "x",
+        "search",
+        "min_faves",
+        "thread"
+      ],
+      "aliases": [
+        "twemex",
+        "twitter search"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "sites.linkedin",
+      "name": "LinkedIn Creator Tools",
+      "description": "Post preview cutoffs, Unicode styling, and quick profile CSV export",
+      "category": "sites",
+      "categorySlug": "sites",
+      "slug": "linkedin",
+      "route": "/tools/sites/linkedin",
+      "icon": "BriefcaseBusinessIcon",
+      "keywords": [
+        "linkedin",
+        "post",
+        "see more",
+        "unicode",
+        "recruiter"
+      ],
+      "aliases": [
+        "linkedin formatter",
+        "taplio"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "sites.whatsapp",
+      "name": "ChatBoost",
+      "description": "Privacy, business tools, exports, and broadcasting for web.whatsapp.com",
+      "category": "sites",
+      "categorySlug": "sites",
+      "slug": "whatsapp",
+      "route": "/tools/sites/whatsapp",
+      "icon": "MessageCircleIcon",
+      "keywords": [
+        "chatboost",
+        "whatsapp",
+        "wa",
+        "business",
+        "broadcast",
+        "privacy"
+      ],
+      "aliases": [
+        "chat boost",
+        "whatsapp tools"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "calculators.calculator",
+      "name": "Calculator",
+      "description": "Arithmetic and scientific calculator with history (no eval).",
+      "category": "calculators",
+      "categorySlug": "calculators",
+      "slug": "calculator",
+      "route": "/tools/calculators/calculator",
+      "icon": "CalculatorIcon",
+      "keywords": [
+        "calculator",
+        "math",
+        "arithmetic",
+        "scientific",
+        "percent",
+        "sqrt"
+      ],
+      "aliases": [
+        "calculator",
+        "calc",
+        "math",
+        "scientific calculator",
+        "percentage"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "calculators.unit-converter",
+      "name": "Unit Converter",
+      "description": "Convert length, weight, temperature, data, speed and more.",
+      "category": "calculators",
+      "categorySlug": "calculators",
+      "slug": "unit-converter",
+      "route": "/tools/calculators/unit-converter",
+      "icon": "ArrowLeftRightIcon",
+      "keywords": [
+        "unit",
+        "convert",
+        "length",
+        "weight",
+        "temperature",
+        "data",
+        "speed",
+        "volume"
+      ],
+      "aliases": [
+        "unit converter",
+        "convert units",
+        "kg to lb",
+        "km to miles",
+        "celsius to fahrenheit",
+        "mb to gb"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "calculators.base-converter",
+      "name": "Number Base Converter",
+      "description": "Convert between binary, octal, decimal and hexadecimal with bit view.",
+      "category": "calculators",
+      "categorySlug": "calculators",
+      "slug": "base-converter",
+      "route": "/tools/calculators/base-converter",
+      "icon": "BinaryIcon",
+      "keywords": [
+        "base",
+        "binary",
+        "octal",
+        "decimal",
+        "hexadecimal",
+        "hex",
+        "bits"
+      ],
+      "aliases": [
+        "base converter",
+        "binary converter",
+        "hex to decimal",
+        "decimal to binary",
+        "number base"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "datetime.toolkit",
+      "name": "Date & Time Toolkit",
+      "description": "Convert timestamps, calculate dates, compare time zones and preview cron schedules.",
+      "category": "datetime",
+      "categorySlug": "datetime",
+      "slug": "toolkit",
+      "route": "/tools/datetime/toolkit",
+      "icon": "CalendarClockIcon",
+      "keywords": [
+        "date",
+        "time",
+        "timezone",
+        "cron",
+        "working days",
+        "difference",
+        "add days",
+        "timestamp",
+        "unix",
+        "epoch",
+        "world clock",
+        "business days",
+        "iso week",
+        "next run"
+      ],
+      "aliases": [
+        "date calculator",
+        "timezone converter",
+        "cron parser",
+        "cron expression",
+        "date difference",
+        "working days",
+        "unix timestamp",
+        "timestamp converter"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [
+        "SELECTION"
+      ],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "screenshots.capture",
+      "name": "Capture Toolkit",
+      "description": "Capture the visible tab and annotate with shapes, text, highlight and blur.",
+      "category": "screenshots",
+      "categorySlug": "screenshots",
+      "slug": "capture",
+      "route": "/tools/screenshots/capture",
+      "icon": "CameraIcon",
+      "keywords": [
+        "screenshot",
+        "capture",
+        "screen",
+        "annotate",
+        "arrow",
+        "blur"
+      ],
+      "aliases": [
+        "take screenshot",
+        "screenshot",
+        "capture screen",
+        "annotate screenshot"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND",
+        "SCREEN_CAPTURE"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "screenshots.recorder",
+      "name": "Screen Recorder",
+      "description": "Record a tab, window, or your whole screen with mic and tab audio, then save or share it.",
+      "category": "screenshots",
+      "categorySlug": "screenshots",
+      "slug": "recorder",
+      "route": "/tools/screenshots/recorder",
+      "icon": "VideoIcon",
+      "keywords": [
+        "record",
+        "recorder",
+        "screen recording",
+        "video",
+        "screencast",
+        "tutorial",
+        "webm",
+        "mp4"
+      ],
+      "aliases": [
+        "record screen",
+        "screen recorder",
+        "record tab",
+        "screencast"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND",
+        "SCREEN_CAPTURE"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "image.save-as-type",
+      "name": "Save Image As Type",
+      "description": "Right-click any image and save as JPG, PNG, WebP, GIF, or PDF — converted locally.",
+      "category": "image",
+      "categorySlug": "image",
+      "slug": "save-as-type",
+      "route": "/tools/image/save-as-type",
+      "icon": "DownloadIcon",
+      "keywords": [
+        "save image",
+        "download image",
+        "jpg",
+        "png",
+        "pdf",
+        "webp",
+        "gif",
+        "convert",
+        "context menu"
+      ],
+      "aliases": [
+        "save image as type",
+        "image format converter",
+        "save as jpg",
+        "save as png"
+      ],
+      "capabilities": [
+        "CONTEXT_MENU"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "image.image-toolkit",
+      "name": "Image Toolkit",
+      "description": "Resize, crop, convert, inspect and encode images locally.",
+      "category": "image",
+      "categorySlug": "image",
+      "slug": "image-toolkit",
+      "route": "/tools/image/image-toolkit",
+      "icon": "ImageIcon",
+      "keywords": [
+        "image",
+        "resize",
+        "crop",
+        "convert",
+        "png",
+        "jpg",
+        "webp",
+        "base64",
+        "metadata"
+      ],
+      "aliases": [
+        "image resize",
+        "image converter",
+        "image to base64",
+        "compress image",
+        "crop image",
+        "png to jpg"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "image.image-downloader",
+      "name": "Image Downloader",
+      "description": "Browse, filter, and download multiple images from the active page.",
+      "category": "image",
+      "categorySlug": "image",
+      "slug": "image-downloader",
+      "route": "/tools/image/image-downloader",
+      "icon": "ImagesIcon",
+      "keywords": [
+        "bulk download images",
+        "save all images",
+        "image grabber",
+        "download pictures",
+        "image downloader"
+      ],
+      "aliases": [
+        "image downloader",
+        "bulk image save",
+        "download images from page"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "files.file-toolkit",
+      "name": "File Toolkit",
+      "description": "View CSV/JSON/text files and combine images into a PDF — all locally.",
+      "category": "files",
+      "categorySlug": "files",
+      "slug": "file-toolkit",
+      "route": "/tools/files/file-toolkit",
+      "icon": "FolderOpenIcon",
+      "keywords": [
+        "file",
+        "csv",
+        "json",
+        "text",
+        "pdf",
+        "image",
+        "convert",
+        "viewer"
+      ],
+      "aliases": [
+        "csv viewer",
+        "json viewer",
+        "image to pdf",
+        "text viewer",
+        "file viewer"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "generators.qr-toolkit",
+      "name": "QR Code Toolkit",
+      "description": "Generate QR codes for text, URLs, Wi-Fi, email, phone and contacts; decode from images.",
+      "category": "generators",
+      "categorySlug": "generators",
+      "slug": "qr-toolkit",
+      "route": "/tools/generators/qr-toolkit",
+      "icon": "QrCodeIcon",
+      "keywords": [
+        "qr",
+        "qrcode",
+        "qr code",
+        "wifi",
+        "barcode",
+        "generate",
+        "decode",
+        "scan"
+      ],
+      "aliases": [
+        "qr code",
+        "qr generator",
+        "qr code generator",
+        "wifi qr",
+        "qr decoder",
+        "scan qr"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "seo.toolkit",
+      "name": "SEO Toolkit",
+      "description": "Full on-page SEO audit: meta, indexability, content, links, images, schema, hreflang, social and PageSpeed.",
+      "category": "seo",
+      "categorySlug": "seo",
+      "slug": "toolkit",
+      "route": "/tools/seo/toolkit",
+      "icon": "SearchCheckIcon",
+      "keywords": [
+        "seo",
+        "meta",
+        "headings",
+        "links",
+        "open graph",
+        "alt",
+        "title",
+        "description",
+        "canonical",
+        "robots",
+        "sitemap",
+        "schema",
+        "hreflang",
+        "pagespeed",
+        "structured data"
+      ],
+      "aliases": [
+        "seo analyzer",
+        "seo audit",
+        "page seo",
+        "meta analyzer",
+        "heading structure",
+        "detailed seo",
+        "on-page seo"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "productivity.notes",
+      "name": "Notes",
+      "description": "Notepad-style notes with formatting, colors, find & replace and export.",
+      "category": "productivity",
+      "categorySlug": "productivity",
+      "slug": "notes",
+      "route": "/tools/productivity/notes",
+      "icon": "NotebookPenIcon",
+      "keywords": [
+        "notes",
+        "markdown",
+        "write",
+        "pin",
+        "search",
+        "local",
+        "export",
+        "pdf",
+        "checklist",
+        "sticky"
+      ],
+      "aliases": [
+        "notes",
+        "notepad",
+        "scratchpad",
+        "quick notes",
+        "sticky notes"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "STORAGE"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "productivity.timer",
+      "name": "Timer",
+      "description": "Countdown, stopwatch and Pomodoro. Keeps running when the panel is closed.",
+      "category": "productivity",
+      "categorySlug": "productivity",
+      "slug": "timer",
+      "route": "/tools/productivity/timer",
+      "icon": "TimerIcon",
+      "keywords": [
+        "timer",
+        "countdown",
+        "stopwatch",
+        "pomodoro",
+        "focus"
+      ],
+      "aliases": [
+        "timer",
+        "countdown timer",
+        "stopwatch",
+        "pomodoro timer",
+        "focus timer"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "productivity.tab-manager",
+      "name": "Tab Manager",
+      "description": "Find, group, pin, mute, sleep, close and export your open tabs.",
+      "category": "productivity",
+      "categorySlug": "productivity",
+      "slug": "tab-manager",
+      "route": "/tools/productivity/tab-manager",
+      "icon": "LayoutGridIcon",
+      "keywords": [
+        "tabs",
+        "manage",
+        "close",
+        "duplicates",
+        "search",
+        "urls",
+        "group",
+        "mute",
+        "sleep",
+        "export"
+      ],
+      "aliases": [
+        "tab manager",
+        "duplicate tabs",
+        "close tabs",
+        "tab search",
+        "copy tab urls",
+        "tab groups",
+        "mute tabs"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "productivity.form-autofill",
+      "name": "Form Autofill",
+      "description": "Review and fill web forms from your saved answers.",
+      "category": "productivity",
+      "categorySlug": "productivity",
+      "slug": "form-autofill",
+      "route": "/tools/productivity/form-autofill",
+      "icon": "TextCursorInputIcon",
+      "keywords": [
+        "autofill",
+        "form",
+        "fill",
+        "job application",
+        "profile",
+        "answers"
+      ],
+      "aliases": [
+        "form autofill",
+        "autofill forms",
+        "fill form",
+        "job application autofill"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS",
+        "STORAGE"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "beta"
+    },
+    {
+      "id": "browser.picture-in-picture",
+      "name": "Picture-in-Picture",
+      "description": "Float the page video in a always-on-top window with Alt+P or the context menu.",
+      "category": "browser",
+      "categorySlug": "browser",
+      "slug": "picture-in-picture",
+      "route": "/tools/browser/picture-in-picture",
+      "icon": "PictureInPicture2Icon",
+      "keywords": [
+        "pip",
+        "picture in picture",
+        "video",
+        "float",
+        "player",
+        "alt+p"
+      ],
+      "aliases": [
+        "watch video pip",
+        "floating video",
+        "mini player"
+      ],
+      "capabilities": [
+        "CONTEXT_MENU",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "browser.internet-monitor",
+      "name": "Internet Monitor",
+      "description": "Track connection status, latency, disconnects and downtime with a realtime graph and log.",
+      "category": "browser",
+      "categorySlug": "browser",
+      "slug": "internet-monitor",
+      "route": "/tools/browser/internet-monitor",
+      "icon": "WifiIcon",
+      "keywords": [
+        "internet",
+        "connection",
+        "network",
+        "wifi",
+        "ping",
+        "latency",
+        "offline",
+        "uptime",
+        "ip"
+      ],
+      "aliases": [
+        "internet connection monitor",
+        "connection log",
+        "network status",
+        "downtime tracker"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "browser.speed-test",
+      "name": "Speed Test",
+      "description": "Measure your download and upload speed, ping and jitter with an animated gauge and history.",
+      "category": "browser",
+      "categorySlug": "browser",
+      "slug": "speed-test",
+      "route": "/tools/browser/speed-test",
+      "icon": "GaugeIcon",
+      "keywords": [
+        "speed",
+        "speedtest",
+        "bandwidth",
+        "download",
+        "upload",
+        "ping",
+        "jitter",
+        "mbps",
+        "internet",
+        "network"
+      ],
+      "aliases": [
+        "internet speed test",
+        "speed check",
+        "download speed",
+        "upload speed",
+        "bandwidth test",
+        "net speed"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "browser.toolkit",
+      "name": "Browser Toolkit",
+      "description": "Copy links in any format, control the tab, and zoom, edit, print or screenshot the page.",
+      "category": "browser",
+      "categorySlug": "browser",
+      "slug": "toolkit",
+      "route": "/tools/browser/toolkit",
+      "icon": "PanelsTopLeftIcon",
+      "keywords": [
+        "browser",
+        "tab",
+        "url",
+        "title",
+        "reload",
+        "duplicate",
+        "copy",
+        "markdown",
+        "qr",
+        "pin",
+        "mute",
+        "zoom",
+        "print",
+        "screenshot",
+        "incognito"
+      ],
+      "aliases": [
+        "copy url",
+        "copy title",
+        "reload page",
+        "hard refresh",
+        "duplicate tab",
+        "copy markdown link",
+        "clean url",
+        "remove utm",
+        "page qr code",
+        "pin tab",
+        "mute tab",
+        "edit page",
+        "design mode"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "storage.inspector",
+      "name": "Storage Inspector",
+      "description": "Inspect localStorage and sessionStorage of the current page.",
+      "category": "storage",
+      "categorySlug": "storage",
+      "slug": "inspector",
+      "route": "/tools/storage/inspector",
+      "icon": "DatabaseIcon",
+      "keywords": [
+        "storage",
+        "localstorage",
+        "sessionstorage",
+        "cookies",
+        "inspect",
+        "keys"
+      ],
+      "aliases": [
+        "local storage",
+        "session storage",
+        "storage inspector",
+        "cookies",
+        "web storage"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS",
+        "DEVTOOLS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "accessibility.toolkit",
+      "name": "Accessibility Quick Check",
+      "description": "Quick page checks: alt text, headings, link names and language.",
+      "category": "accessibility",
+      "categorySlug": "accessibility",
+      "slug": "toolkit",
+      "route": "/tools/accessibility/toolkit",
+      "icon": "AccessibilityIcon",
+      "keywords": [
+        "accessibility",
+        "a11y",
+        "alt",
+        "headings",
+        "aria",
+        "contrast",
+        "wcag"
+      ],
+      "aliases": [
+        "accessibility check",
+        "a11y audit",
+        "alt text check",
+        "heading check"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "CONTENT_SCRIPT",
+        "PAGE_ACCESS"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    }
+  ]
+}
