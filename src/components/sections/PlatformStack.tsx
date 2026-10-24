@@ -82,7 +82,7 @@ function ContextMenuVisual() {
           </p>
         ))}
         <p data-menu-item="" className="flex items-center justify-between rounded-md bg-white/[0.07] px-2.5 py-1.5 text-ink">
-          Toolbox <ChevronRightIcon aria-hidden="true" className="size-3.5" />
+          One Panel <ChevronRightIcon aria-hidden="true" className="size-3.5" />
         </p>
         <div data-submenu="" className="absolute left-[calc(100%+6px)] top-[calc(75%)] w-44 origin-left rounded-xl border border-line-strong bg-elevated p-1.5 shadow-2xl">
           {['Format JSON', 'JSON → CSV', 'Decode Base64', 'Hash SHA-256'].map((item, index) => (
@@ -213,7 +213,7 @@ const FEATURES: Feature[] = [
     title: 'Right-click anything, send it to a tool',
     accent: '#f472b6',
     icon: <MousePointerClickIcon aria-hidden="true" className="size-5" />,
-    body: 'Selections, links, images and pages get a Toolbox submenu. The payload opens in the right tool, already filled in.',
+    body: 'Selections, links, images and pages get a One Panel submenu. The payload opens in the right tool, already filled in.',
     points: ['Selection, link, image and page menus', 'Opens the side panel pre-filled', 'Save images as JPG, PNG, WebP, GIF or PDF'],
     visual: <ContextMenuVisual />,
     animate(tl, q) {

@@ -208,7 +208,7 @@ export function WorkflowScrub() {
           <div data-panel="" className="relative rounded-2xl border border-line-strong bg-canvas/90 p-4 shadow-[0_30px_90px_-30px_rgb(99_102_241/0.6)]">
             <div className="flex items-center gap-2 border-b border-line pb-3">
               <LogoMark className="size-4" />
-              <span className="text-xs font-medium">Toolbox · Smart paste</span>
+              <span className="text-xs font-medium">One Panel · Smart paste</span>
               <span data-detected="" className="ml-auto rounded-full border border-cyan/40 bg-cyan/10 px-2.5 py-0.5 font-mono text-[10px] text-cyan">
                 JWT detected
               </span>

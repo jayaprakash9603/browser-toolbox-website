@@ -42,7 +42,7 @@ export function Wordmark({ className }: { className?: string }) {
     <span className={cn('inline-flex items-center gap-2.5 font-medium tracking-tight', className)}>
       <LogoMark className="size-7" />
       <span>
-        Browser <span className="font-serif text-[1.08em] italic">Toolbox</span>
+        One <span className="font-serif text-[1.08em] italic">Panel</span>
       </span>
     </span>
   )

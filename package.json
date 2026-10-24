@@ -1,10 +1,7 @@
 {
-  "name": "browser-toolbox-website",
+  "name": "one-panel-website",
   "private": true,
   "version": "0.1.0",
-  "engines": {
-    "node": ">=20"
-  },
   "type": "module",
   "scripts": {
     "sync:tools": "node scripts/sync-tools.mjs",
@@ -14,6 +11,7 @@
     "build": "next build",
     "postbuild": "node scripts/flatten-segments.mjs",
     "preview": "node scripts/serve-out.mjs",
+    "deploy:pages": "npm run build && wrangler pages deploy out --project-name=one-panel",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },

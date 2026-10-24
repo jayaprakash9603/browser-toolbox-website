@@ -11,7 +11,7 @@ import { TransitionLink } from '@/motion/TransitionLink'
 export const metadata: Metadata = {
   title: 'Privacy',
   description:
-    'Browser Toolbox has no account, no analytics and no remote code. Here is what stays on your device, when anything leaves it, and how to turn things off.',
+    'One Panel has no account, no analytics and no remote code. Here is what stays on your device, when anything leaves it, and how to turn things off.',
   alternates: { canonical: '/privacy/' },
 }
 
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
             Private by design, not by policy.
           </SplitReveal>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
-            Browser Toolbox was built so there is nothing to collect. This page explains what it keeps, where it keeps
+            One Panel was built so there is nothing to collect. This page explains what it keeps, where it keeps
             it, and the few moments anything leaves your device.
           </p>
         </div>
@@ -153,7 +153,7 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      <InstallStrip title="Nothing to collect." body="Add Browser Toolbox to Chrome. No sign-up, no tracking, no surprises." />
+      <InstallStrip title="Nothing to collect." body="Add One Panel to Chrome. No sign-up, no tracking, no surprises." />
     </>
   )
 }

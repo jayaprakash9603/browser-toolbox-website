@@ -27,7 +27,7 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
       {
         name: 'contextMenus',
         kind: 'required',
-        why: 'Adds the right-click Toolbox menu that opens tools with the current selection, link, image or page.',
+        why: 'Adds the right-click One Panel menu that opens tools with the current selection, link, image or page.',
       },
       {
         name: 'activeTab',

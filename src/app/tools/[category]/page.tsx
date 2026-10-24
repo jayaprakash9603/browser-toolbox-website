@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const category = getCategory(id)
   if (!category) return {}
   const title = `${category.name} tools`
-  const description = `${category.description} ${category.tools.length} ${category.name.toLowerCase()} tools in the Browser Toolbox side panel: ${category.tools
+  const description = `${category.description} ${category.tools.length} ${category.name.toLowerCase()} tools in the One Panel side panel: ${category.tools
     .slice(0, 4)
     .map((tool) => tool.name)
     .join(', ')}${category.tools.length > 4 ? ' and more' : ''}.`

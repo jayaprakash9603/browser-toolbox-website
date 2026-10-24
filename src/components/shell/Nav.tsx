@@ -154,7 +154,7 @@ export function Nav({ categories, toolCount }: { categories: ShellCategory[]; to
               : 'border-transparent bg-transparent',
           )}
         >
-          <TransitionLink href="/" transitionLabel="Home" className="rounded-full text-ink" aria-label="Browser Toolbox home">
+          <TransitionLink href="/" transitionLabel="Home" className="rounded-full text-ink" aria-label="One Panel home">
             <Wordmark className="text-[15px]" />
           </TransitionLink>
 

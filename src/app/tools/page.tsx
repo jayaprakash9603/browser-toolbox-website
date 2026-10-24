@@ -11,7 +11,7 @@ import { SplitReveal } from '@/motion/SplitReveal'
 
 export const metadata: Metadata = {
   title: `All ${TOOL_COUNT} tools`,
-  description: `Search every Browser Toolbox tool: ${TOOL_COUNT} tools across ${CATEGORY_COUNT} categories, from JSON and API clients to screenshots, SEO audits and privacy controls.`,
+  description: `Search every One Panel tool: ${TOOL_COUNT} tools across ${CATEGORY_COUNT} categories, from JSON and API clients to screenshots, SEO audits and privacy controls.`,
   alternates: { canonical: '/tools/' },
 }
 
@@ -81,7 +81,7 @@ export default function ToolsPage() {
 
       <InstallStrip
         title={`${TOOL_COUNT} tools. One install.`}
-        body="Add Browser Toolbox to Chrome and every tool on this page is in your side panel."
+        body="Add One Panel to Chrome and every tool on this page is in your side panel."
       />
     </>
   )

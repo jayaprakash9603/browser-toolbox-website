@@ -8,7 +8,7 @@ export function getFaqItems(toolCount: number): FaqItem[] {
   const shortcut = SITE.paletteShortcut.join('+')
   return [
     {
-      question: 'What is Browser Toolbox?',
+      question: `What is ${SITE.name}?`,
       text: `A Chrome extension that puts ${toolCount} everyday tools for developers, designers, QA and SEO in one side panel next to the page you are working on.`,
       answer: (
         <>
@@ -71,7 +71,7 @@ export function getFaqItems(toolCount: number): FaqItem[] {
     },
     {
       question: 'Which browsers are supported?',
-      text: 'Browser Toolbox is built for Chrome on Manifest V3 and uses the side panel API. Chromium browsers with side panel support should work too.',
+      text: 'One Panel is built for Chrome on Manifest V3 and uses the side panel API. Chromium browsers with side panel support should work too.',
       answer: (
         <>
           It is built for Chrome on Manifest V3 and relies on the side panel API. Other Chromium browsers that support

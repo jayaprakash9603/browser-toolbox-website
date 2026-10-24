@@ -385,7 +385,7 @@ export function PanelReel() {
               <aside className="flex w-[52%] flex-col border-l border-line bg-canvas/70 md:w-[44%]">
                 <div className="flex items-center gap-2 border-b border-line px-3 py-2.5">
                   <LogoMark className="size-4" />
-                  <span className="text-xs font-medium text-ink">Toolbox</span>
+                  <span className="text-xs font-medium text-ink">One Panel</span>
                   <span className="ml-auto flex h-7 flex-1 items-center gap-1.5 overflow-hidden rounded-full border border-line bg-surface px-2.5">
                     <SearchIcon className="size-3 shrink-0 text-muted" />
                     <span className="relative h-4 flex-1 overflow-hidden font-mono text-[11px] text-ink">

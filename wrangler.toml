@@ -1,5 +1,5 @@
-# Cloudflare Pages (static export). Connect this repo in the dashboard; Wrangler reads this file for the output directory.
-# https://developers.cloudflare.com/pages/configuration/wrangler-configuration/
-name = "browser-toolbox-website"
+# Cloudflare Pages — static export from `npm run build` (output: out/)
+# https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+name = "one-panel"
 compatibility_date = "2024-09-23"
 pages_build_output_dir = "out"

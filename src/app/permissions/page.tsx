@@ -9,7 +9,7 @@ import { SplitReveal } from '@/motion/SplitReveal'
 export const metadata: Metadata = {
   title: 'Permissions',
   description:
-    'Every Chrome permission Browser Toolbox requests, and exactly which feature uses it. Optional permissions are only requested when you turn the feature on.',
+    'Every Chrome permission One Panel requests, and exactly which feature uses it. Optional permissions are only requested when you turn the feature on.',
   alternates: { canonical: '/permissions/' },
 }
 
@@ -27,7 +27,7 @@ export default function PermissionsPage() {
           </SplitReveal>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
             Chrome shows a short warning when you install an extension. Here is the long version: each permission
-            Browser Toolbox asks for, and the feature that uses it. {optionalCount} of them are optional and only
+            One Panel asks for, and the feature that uses it. {optionalCount} of them are optional and only
             requested when you switch that feature on.
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function PermissionsPage() {
             Deliberately not requested
           </h2>
           <p className="mt-3 max-w-xl text-muted">
-            Browser Toolbox never asks for these. They will only be added if a feature truly needs them.
+            One Panel never asks for these. They will only be added if a feature truly needs them.
           </p>
           <ul className="mt-8 flex flex-wrap gap-2">
             {NOT_REQUESTED.map((name) => (
@@ -55,7 +55,7 @@ export default function PermissionsPage() {
         </div>
       </section>
 
-      <InstallStrip title="Transparent by default." body="Review the permissions above, then add Browser Toolbox to Chrome." />
+      <InstallStrip title="Transparent by default." body="Review the permissions above, then add One Panel to Chrome." />
     </>
   )
 }

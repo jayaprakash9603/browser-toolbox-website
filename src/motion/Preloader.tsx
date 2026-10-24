@@ -76,7 +76,7 @@ export function Preloader({ toolCount }: { toolCount: number }) {
       <div data-intro-bottom="" className="absolute inset-x-0 bottom-0 h-1/2 bg-canvas" />
       <div data-intro-content="" className="absolute inset-0 flex flex-col justify-between p-6 md:p-10">
         <div className="flex justify-between overflow-hidden font-mono text-xs uppercase tracking-[0.3em] text-muted">
-          <span data-intro-meta="">Browser Toolbox</span>
+          <span data-intro-meta="">One Panel</span>
           <span data-intro-meta="">Loading {toolCount} tools</span>
         </div>
         <div className="flex items-center justify-center">

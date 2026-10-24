@@ -103,7 +103,7 @@ export function Footer({ categories, toolCount }: { categories: ShellCategory[];
         </p>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-line pt-6 font-mono text-[11px] text-muted sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} Browser Toolbox · Built for Chrome · Manifest V3</span>
+          <span>© {new Date().getFullYear()} One Panel · Built for Chrome · Manifest V3</span>
           <span>No analytics on the extension. No remote code. Your data stays on your device.</span>
         </div>
       </div>

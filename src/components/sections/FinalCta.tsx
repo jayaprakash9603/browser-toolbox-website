@@ -62,7 +62,7 @@ export function FinalCta({ toolCount }: { toolCount: number }) {
             {toolCount} tools in one side panel. Free to install, no account, and no tracking.
           </p>
           <div className="mt-12 flex flex-col items-center gap-6">
-            <InstallButton size="lg" label="Add Browser Toolbox to Chrome" shortLabel="Add to Chrome" />
+            <InstallButton size="lg" label="Add One Panel to Chrome" shortLabel="Add to Chrome" />
             <p className="flex flex-wrap items-center justify-center gap-2 text-sm text-muted">
               Then press
               {SITE.paletteShortcut.map((key) => (

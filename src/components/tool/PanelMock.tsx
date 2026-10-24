@@ -184,7 +184,7 @@ export function PanelMock({ toolName, icon, accent, features }: PanelMockProps) 
       <div className="relative overflow-hidden rounded-[28px] border border-line-strong bg-surface/95 shadow-[0_40px_120px_-40px_rgb(0_0_0/0.9)] backdrop-blur">
         <div className="flex items-center gap-2 border-b border-line px-4 py-3">
           <LogoMark className="size-4" />
-          <span className="text-xs font-medium text-ink-soft">Toolbox</span>
+          <span className="text-xs font-medium text-ink-soft">One Panel</span>
           <span className="ml-auto flex h-7 w-40 items-center gap-2 rounded-full border border-line bg-canvas/80 px-2.5 text-[11px] text-muted">
             <SearchIcon aria-hidden="true" className="size-3" /> Search tools
           </span>
