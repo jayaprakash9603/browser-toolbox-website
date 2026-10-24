@@ -1,5 +1,8 @@
-# Cloudflare Pages — static export from `npm run build` (output: out/)
-# https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+# One Panel — static Next.js export in `out/`
 name = "one-panel"
 compatibility_date = "2024-09-23"
-pages_build_output_dir = "out"
+
+# Required when the Cloudflare build "Deploy command" is `npx wrangler deploy`.
+# Do NOT use `wrangler deploy` on a Pages project — see DEPLOY.md.
+[assets]
+directory = "./out"

@@ -13,4 +13,4 @@ npm run preview  # serves out/ (default port 4321)
 
 Set `NEXT_PUBLIC_CHROME_STORE_URL` and `NEXT_PUBLIC_SITE_URL` before deploying (default site URL in code: `https://onepanel.quickcalci.com`).
 
-See [DEPLOY.md](./DEPLOY.md) for Cloudflare Pages (GitHub Actions or `npm run deploy:pages`).
+See [DEPLOY.md](./DEPLOY.md) for Cloudflare Pages. **Use build `npm run build` + output `out` with no deploy command** in the dashboard; do not use `wrangler deploy` on a Pages project.

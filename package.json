@@ -11,7 +11,7 @@
     "build": "next build",
     "postbuild": "node scripts/flatten-segments.mjs",
     "preview": "node scripts/serve-out.mjs",
-    "deploy:pages": "npm run build && wrangler pages deploy out --project-name=one-panel",
+    "deploy:pages": "npm run build && npx wrangler pages deploy out --project-name=one-panel",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
