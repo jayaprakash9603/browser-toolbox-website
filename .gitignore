@@ -12,6 +12,8 @@ next-env.d.ts
 # Environment
 .env
 .env*.local
+.dev.vars*
+.wrangler/
 
 # Logs and OS files
 npm-debug.log*

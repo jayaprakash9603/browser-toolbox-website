@@ -1,0 +1,55 @@
+import type { Fact, WalkStep } from '@/components/tool/story'
+
+export const ROLES = [
+  { id: 'role-1', title: 'Frontend Engineer', remote: false },
+  { id: 'role-2', title: 'Platform Engineer', remote: true },
+  { id: 'role-3', title: 'Product Designer', remote: false },
+  { id: 'role-4', title: 'QA Automation Lead', remote: true },
+  { id: 'role-5', title: 'Data Analyst', remote: false },
+]
+
+export const ALL = '//li[@class="role"]'
+export const REMOTE = '//li[@data-remote="true"]'
+export const BROKEN = '//li[@data-remote='
+
+export const REMOTE_MATCHES = ROLES.filter((role) => role.remote)
+
+/** Chrome's own message for an invalid expression, first line only, as the tool shows it. */
+export const ERROR = `Failed to execute 'evaluate' on 'Document': The string '${BROKEN}' is not a valid XPath expression.`
+
+export const STEPS: WalkStep[] = [
+  {
+    title: 'Write an expression',
+    body: 'Type XPath against the page you have open and press Test.',
+  },
+  {
+    title: 'See every match',
+    body: 'The match count and the first matches, as tag and id, come straight back.',
+  },
+  {
+    title: 'Narrow it down',
+    body: 'Tighten the predicate and watch the count drop to the nodes you meant.',
+  },
+  {
+    title: 'Catch the typo',
+    body: 'An invalid expression shows the browser’s own error instead of failing silently.',
+  },
+]
+
+export const CAPTIONS = STEPS.map((step) => step.title)
+
+export const DETAILS = [
+  'Runs document.evaluate on the live page, not a copy.',
+  'How many nodes the expression selects.',
+  'The first five matches as tag and id.',
+]
+
+export const FACTS: Fact[] = [
+  {
+    value: `${ROLES.length} → ${REMOTE_MATCHES.length}`,
+    label: 'Matches in the demo, before and after narrowing',
+  },
+  { value: '5', label: 'Sample matches listed per run' },
+  { value: 'Live', label: 'Evaluated against the open tab' },
+  { value: '0', label: 'Test runs needed to check a locator' },
+]

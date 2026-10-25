@@ -19,7 +19,13 @@ interface MarqueeProps {
  * CSS-driven infinite loop (cheap on the main thread) with a GSAP skew that follows scroll
  * velocity. Pauses on hover/focus; static under reduced motion.
  */
-export function Marquee({ children, className, reverse = false, duration = 40, label }: MarqueeProps) {
+export function Marquee({
+  children,
+  className,
+  reverse = false,
+  duration = 40,
+  label,
+}: MarqueeProps) {
   const ref = useRef<HTMLDivElement>(null)
 
   useGSAP(

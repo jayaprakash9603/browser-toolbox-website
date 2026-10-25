@@ -26,7 +26,10 @@ interface ToolsExplorerProps {
 }
 
 function isTypingTarget(target: EventTarget | null) {
-  return target instanceof HTMLElement && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))
+  return (
+    target instanceof HTMLElement &&
+    (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))
+  )
 }
 
 export function ToolsExplorer({ tools, categories }: ToolsExplorerProps) {
@@ -35,7 +38,10 @@ export function ToolsExplorer({ tools, categories }: ToolsExplorerProps) {
   const gridRef = useRef<HTMLUListElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const flipState = useRef<Flip.FlipState | null>(null)
-  const categoryNames = useMemo(() => Object.fromEntries(categories.map((item) => [item.id, item.name])), [categories])
+  const categoryNames = useMemo(
+    () => Object.fromEntries(categories.map((item) => [item.id, item.name])),
+    [categories],
+  )
 
   const results = useMemo(() => {
     const pool = category === 'all' ? tools : tools.filter((tool) => tool.category === category)
@@ -73,8 +79,14 @@ export function ToolsExplorer({ tools, categories }: ToolsExplorerProps) {
       scale: true,
       absolute: true,
       nested: true,
-      onEnter: (elements) => gsap.fromTo(elements, { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'expo.out' }),
-      onLeave: (elements) => gsap.to(elements, { opacity: 0, scale: 0.92, duration: 0.3, ease: 'power2.in' }),
+      onEnter: (elements) =>
+        gsap.fromTo(
+          elements,
+          { opacity: 0, scale: 0.92 },
+          { opacity: 1, scale: 1, duration: 0.5, ease: 'expo.out' },
+        ),
+      onLeave: (elements) =>
+        gsap.to(elements, { opacity: 0, scale: 0.92, duration: 0.3, ease: 'power2.in' }),
     })
   }, [ordered, visibleIds])
 
@@ -85,7 +97,8 @@ export function ToolsExplorer({ tools, categories }: ToolsExplorerProps) {
     const initialCategory = params.get('category') ?? 'all'
     /* eslint-disable react-hooks/set-state-in-effect -- one-time sync from the URL after hydration */
     if (initialQuery) setQuery(initialQuery)
-    if (initialCategory !== 'all' && categories.some((item) => item.id === initialCategory)) setCategory(initialCategory)
+    if (initialCategory !== 'all' && categories.some((item) => item.id === initialCategory))
+      setCategory(initialCategory)
     /* eslint-enable react-hooks/set-state-in-effect */
   }, [categories])
 
@@ -95,7 +108,8 @@ export function ToolsExplorer({ tools, categories }: ToolsExplorerProps) {
     if (category !== 'all') params.set('category', category)
     const search = params.toString()
     const next = `${window.location.pathname}${search ? `?${search}` : ''}`
-    if (next !== `${window.location.pathname}${window.location.search}`) window.history.replaceState(null, '', next)
+    if (next !== `${window.location.pathname}${window.location.search}`)
+      window.history.replaceState(null, '', next)
   }, [query, category])
 
   useEffect(() => {
@@ -108,7 +122,10 @@ export function ToolsExplorer({ tools, categories }: ToolsExplorerProps) {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  const pills = [{ id: 'all', name: 'All', icon: '', accent: '#f4f4f6', count: tools.length }, ...categories]
+  const pills = [
+    { id: 'all', name: 'All', icon: '', accent: '#f4f4f6', count: tools.length },
+    ...categories,
+  ]
 
   return (
     <div>
@@ -142,7 +159,11 @@ export function ToolsExplorer({ tools, categories }: ToolsExplorerProps) {
             </span>
           )}
         </label>
-        <div role="group" aria-label="Filter by category" className="no-scrollbar mt-2 flex gap-1.5 overflow-x-auto px-1 pb-1">
+        <div
+          role="group"
+          aria-label="Filter by category"
+          className="no-scrollbar mt-2 flex gap-1.5 overflow-x-auto px-1 pb-1"
+        >
           {pills.map((pill) => {
             const selected = category === pill.id
             return (
@@ -153,28 +174,50 @@ export function ToolsExplorer({ tools, categories }: ToolsExplorerProps) {
                 onClick={() => updateCategory(pill.id)}
                 className={cn(
                   'flex shrink-0 items-center gap-2 rounded-full border px-3.5 py-2 text-sm transition-colors duration-300',
-                  selected ? 'border-transparent bg-ink text-canvas' : 'border-line text-ink-soft hover:border-line-strong hover:text-ink',
+                  selected
+                    ? 'border-transparent bg-ink text-canvas'
+                    : 'border-line text-ink-soft hover:border-line-strong hover:text-ink',
                 )}
               >
                 {pill.id === 'all' ? (
                   <LayoutGridIcon aria-hidden="true" className="size-3.5" strokeWidth={2} />
                 ) : (
-                  <ToolIcon name={pill.icon} className="size-3.5" style={selected ? undefined : { color: pill.accent }} strokeWidth={2} />
+                  <ToolIcon
+                    name={pill.icon}
+                    className="size-3.5"
+                    style={selected ? undefined : { color: pill.accent }}
+                    strokeWidth={2}
+                  />
                 )}
                 {pill.name}
-                <span className={cn('font-mono text-[10.5px]', selected ? 'text-canvas/60' : 'text-muted')}>{pill.count}</span>
+                <span
+                  className={cn(
+                    'font-mono text-[10.5px]',
+                    selected ? 'text-canvas/60' : 'text-muted',
+                  )}
+                >
+                  {pill.count}
+                </span>
               </button>
             )
           })}
         </div>
       </div>
 
-      <p aria-live="polite" className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-muted">
-        {results.length === tools.length ? `All ${tools.length} tools` : `${results.length} of ${tools.length} tools`}
+      <p
+        aria-live="polite"
+        className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-muted"
+      >
+        {results.length === tools.length
+          ? `All ${tools.length} tools`
+          : `${results.length} of ${tools.length} tools`}
         {query.trim() ? ` matching “${query.trim()}”` : ''}
       </p>
 
-      <ul ref={gridRef} className="relative mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <ul
+        ref={gridRef}
+        className="relative mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      >
         {ordered.map((tool) => (
           <li
             key={tool.id}

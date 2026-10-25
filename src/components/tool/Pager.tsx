@@ -29,7 +29,9 @@ function PagerItem({ link, direction }: { link: PagerLink; direction: 'previous'
           'absolute inset-0 scale-x-0 transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-x-100 group-focus-visible:scale-x-100',
           next ? 'origin-right' : 'origin-left',
         )}
-        style={{ background: `linear-gradient(${next ? 270 : 90}deg, ${link.accent}29, transparent)` }}
+        style={{
+          background: `linear-gradient(${next ? 270 : 90}deg, ${link.accent}29, transparent)`,
+        }}
       />
       <span className="relative flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.24em] text-muted">
         {next ? null : <ArrowLeftIcon aria-hidden="true" className="size-3.5" />}
@@ -51,7 +53,15 @@ function PagerItem({ link, direction }: { link: PagerLink; direction: 'previous'
   )
 }
 
-export function Pager({ previous, next, label }: { previous: PagerLink; next: PagerLink; label: string }) {
+export function Pager({
+  previous,
+  next,
+  label,
+}: {
+  previous: PagerLink
+  next: PagerLink
+  label: string
+}) {
   return (
     <nav aria-label={label} className="mx-auto max-w-7xl px-6 md:px-10">
       <div className="grid overflow-hidden rounded-[28px] border border-line md:grid-cols-2">

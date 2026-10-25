@@ -11,7 +11,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
 
 if (typeof window !== 'undefined') {
-  gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText, Flip, Draggable, InertiaPlugin, DrawSVGPlugin)
+  gsap.registerPlugin(
+    useGSAP,
+    ScrollTrigger,
+    SplitText,
+    Flip,
+    Draggable,
+    InertiaPlugin,
+    DrawSVGPlugin,
+  )
   gsap.defaults({ ease: 'expo.out', duration: 0.9 })
   ScrollTrigger.config({ ignoreMobileResize: true })
 }
@@ -47,7 +55,11 @@ function flushSetups() {
  */
 export function useDeferredGSAP(
   setup: Setup,
-  { scope, dependencies = [], defer = true }: { scope: RefObject<HTMLElement | null>; dependencies?: unknown[]; defer?: boolean },
+  {
+    scope,
+    dependencies = [],
+    defer = true,
+  }: { scope: RefObject<HTMLElement | null>; dependencies?: unknown[]; defer?: boolean },
 ) {
   useGSAP(
     (context) => {

@@ -7,9 +7,15 @@ import { TransitionLink } from '@/motion/TransitionLink'
 
 import type { ShellCategory } from './shellData'
 
-const GIANT = 'TOOLBOX'
+const GIANT = 'ONE PANEL'
 
-export function Footer({ categories, toolCount }: { categories: ShellCategory[]; toolCount: number }) {
+export function Footer({
+  categories,
+  toolCount,
+}: {
+  categories: ShellCategory[]
+  toolCount: number
+}) {
   return (
     <footer className="relative overflow-hidden border-t border-line bg-canvas">
       <div
@@ -21,8 +27,8 @@ export function Footer({ categories, toolCount }: { categories: ShellCategory[];
           <div className="space-y-6">
             <Wordmark className="text-lg" />
             <p className="max-w-sm text-sm leading-relaxed text-muted">
-              {toolCount} developer, QA, design and productivity tools in one Chrome side panel. Local-first, no
-              account, no tracking.
+              {toolCount} developer, QA, design and productivity tools in one Chrome side panel.
+              Local-first, no account, no tracking.
             </p>
             <InstallButton />
             <p className="flex items-center gap-2 font-mono text-[11px] text-muted">
@@ -34,7 +40,9 @@ export function Footer({ categories, toolCount }: { categories: ShellCategory[];
           </div>
           <div className="grid gap-10 sm:grid-cols-[2fr_1fr]">
             <nav aria-label="Categories">
-              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.24em] text-muted">Categories</p>
+              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.24em] text-muted">
+                Categories
+              </p>
               <ul className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
                 {categories.map((category) => (
                   <li key={category.id}>
@@ -56,10 +64,16 @@ export function Footer({ categories, toolCount }: { categories: ShellCategory[];
               </ul>
             </nav>
             <nav aria-label="Product">
-              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.24em] text-muted">Product</p>
+              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.24em] text-muted">
+                Product
+              </p>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <TransitionLink href="/tools/" transitionLabel="All tools" className="text-ink-soft hover:text-ink">
+                  <TransitionLink
+                    href="/tools/"
+                    transitionLabel="All tools"
+                    className="text-ink-soft hover:text-ink"
+                  >
                     All tools
                   </TransitionLink>
                 </li>
@@ -69,17 +83,30 @@ export function Footer({ categories, toolCount }: { categories: ShellCategory[];
                   </TransitionLink>
                 </li>
                 <li>
-                  <TransitionLink href="/privacy/" transitionLabel="Privacy" className="text-ink-soft hover:text-ink">
+                  <TransitionLink
+                    href="/privacy/"
+                    transitionLabel="Privacy"
+                    className="text-ink-soft hover:text-ink"
+                  >
                     Privacy policy
                   </TransitionLink>
                 </li>
                 <li>
-                  <TransitionLink href="/permissions/" transitionLabel="Permissions" className="text-ink-soft hover:text-ink">
+                  <TransitionLink
+                    href="/permissions/"
+                    transitionLabel="Permissions"
+                    className="text-ink-soft hover:text-ink"
+                  >
                     Permissions
                   </TransitionLink>
                 </li>
                 <li>
-                  <a href={SITE.chromeStoreUrl} target="_blank" rel="noreferrer" className="text-ink-soft hover:text-ink">
+                  <a
+                    href={SITE.chromeStoreUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-ink-soft hover:text-ink"
+                  >
                     Chrome Web Store
                   </a>
                 </li>
@@ -90,21 +117,27 @@ export function Footer({ categories, toolCount }: { categories: ShellCategory[];
 
         <p
           aria-hidden="true"
-          className="mt-20 flex select-none justify-between font-medium leading-[0.8] tracking-[-0.06em] text-[clamp(4.5rem,19.5vw,19rem)]"
+          className="mt-20 flex select-none justify-between font-medium leading-[0.8] tracking-[-0.06em] text-[clamp(3.5rem,14vw,13.5rem)]"
         >
-          {GIANT.split('').map((letter, index) => (
-            <span
-              key={`${letter}-${index}`}
-              className="inline-block bg-[linear-gradient(180deg,rgb(255_255_255/0.95),rgb(255_255_255/0.08))] bg-clip-text text-transparent transition-[transform,color] duration-700 ease-[var(--ease-spring)] hover:-translate-y-[0.12em] hover:text-indigo motion-reduce:hover:translate-y-0"
-            >
-              {letter}
-            </span>
-          ))}
+          {GIANT.split('').map((letter, index) =>
+            letter === ' ' ? (
+              <span key={index} className="w-[0.2em]" />
+            ) : (
+              <span
+                key={`${letter}-${index}`}
+                className="inline-block bg-[linear-gradient(180deg,rgb(255_255_255/0.95),rgb(255_255_255/0.08))] bg-clip-text text-transparent transition-[transform,color] duration-700 ease-[var(--ease-spring)] hover:-translate-y-[0.12em] hover:text-indigo motion-reduce:hover:translate-y-0"
+              >
+                {letter}
+              </span>
+            ),
+          )}
         </p>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-line pt-6 font-mono text-[11px] text-muted sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} One Panel · Built for Chrome · Manifest V3</span>
-          <span>No analytics on the extension. No remote code. Your data stays on your device.</span>
+          <span>
+            No analytics on the extension. No remote code. Your data stays on your device.
+          </span>
         </div>
       </div>
     </footer>

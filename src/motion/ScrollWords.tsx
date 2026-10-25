@@ -2,7 +2,14 @@
 
 import { useRef, type ElementType, type ReactNode } from 'react'
 
-import { gsap, labelSplitText, MOTION_QUERIES, ScrollTrigger, SplitText, useDeferredGSAP } from './gsap'
+import {
+  gsap,
+  labelSplitText,
+  MOTION_QUERIES,
+  ScrollTrigger,
+  SplitText,
+  useDeferredGSAP,
+} from './gsap'
 
 interface ScrollWordsProps {
   as?: ElementType
@@ -39,7 +46,12 @@ export function ScrollWords({ as: Tag = 'p', children, className }: ScrollWordsP
                     opacity: 1,
                     ease: 'none',
                     stagger: 0.12,
-                    scrollTrigger: { trigger: element, start: 'top 82%', end: 'bottom 48%', scrub: 0.6 },
+                    scrollTrigger: {
+                      trigger: element,
+                      start: 'top 82%',
+                      end: 'bottom 48%',
+                      scrub: 0.6,
+                    },
                   },
                 )
               },

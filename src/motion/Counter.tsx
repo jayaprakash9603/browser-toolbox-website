@@ -13,7 +13,13 @@ interface CounterProps {
 }
 
 /** Renders the final value for SSR/no-JS, then counts up from zero when scrolled into view. */
-export function Counter({ value, prefix = '', suffix = '', className, duration = 2 }: CounterProps) {
+export function Counter({
+  value,
+  prefix = '',
+  suffix = '',
+  className,
+  duration = 2,
+}: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null)
 
   useDeferredGSAP(

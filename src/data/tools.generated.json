@@ -1492,7 +1492,7 @@
     {
       "id": "design.palette-generator",
       "name": "Palette Generator",
-      "description": "Generate complementary, analogous, triadic, monochromatic and random palettes.",
+      "description": "Build harmonious palettes with locks, OKLCH scales, WCAG contrast, color-vision checks, a live UI preview, exports and a curated library.",
       "category": "design",
       "categorySlug": "design",
       "slug": "palette-generator",
@@ -1505,13 +1505,21 @@
         "complementary",
         "analogous",
         "triadic",
-        "monochromatic"
+        "monochromatic",
+        "tailwind",
+        "tokens",
+        "shades",
+        "oklch",
+        "color blind"
       ],
       "aliases": [
         "color palette",
         "color scheme",
         "palette generator",
-        "color harmony"
+        "color harmony",
+        "tailwind colors",
+        "color scale",
+        "image palette"
       ],
       "capabilities": [
         "SIDE_PANEL"
@@ -1638,7 +1646,7 @@
     {
       "id": "design.layout-wireframe",
       "name": "Layout Wireframe",
-      "description": "Toggle colored outlines on all elements to debug layout and spacing.",
+      "description": "Outline the page, hover to see any element’s CSS, and select elements to edit, move or resize them live.",
       "category": "design",
       "categorySlug": "design",
       "slug": "layout-wireframe",
@@ -1649,11 +1657,21 @@
         "outline",
         "wireframe",
         "layout",
-        "debug"
+        "debug",
+        "inspect",
+        "inspector",
+        "css",
+        "box model",
+        "edit",
+        "move",
+        "resize",
+        "live edit"
       ],
       "aliases": [
         "layout wireframe",
-        "css outline"
+        "css outline",
+        "page inspector",
+        "visual editor"
       ],
       "capabilities": [
         "SIDE_PANEL",
@@ -1667,7 +1685,7 @@
     {
       "id": "design.css-generator",
       "name": "CSS Generator",
-      "description": "Generate gradients, box shadows, border radius and glass effects.",
+      "description": "Generate complete UI styles (liquid glass, neumorphism, claymorphism, brutalism and more), animated backgrounds, button, hover, text and loader effects, plus gradients, shadows, shapes, animations and layouts. Save styles to a library and export them as one stylesheet.",
       "category": "design",
       "categorySlug": "design",
       "slug": "css-generator",
@@ -1679,14 +1697,45 @@
         "shadow",
         "border radius",
         "glass",
-        "generator"
+        "generator",
+        "text shadow",
+        "filter",
+        "clip path",
+        "transform",
+        "animation",
+        "keyframes",
+        "flexbox",
+        "grid",
+        "tailwind",
+        "neumorphism",
+        "liquid glass",
+        "claymorphism",
+        "skeuomorphism",
+        "brutalism",
+        "aurora",
+        "loader",
+        "spinner",
+        "button effects",
+        "hover effects",
+        "text effects",
+        "glitch",
+        "typewriter"
       ],
       "aliases": [
         "gradient generator",
+        "ui style generator",
+        "css loader generator",
+        "css button generator",
+        "animated background",
         "box shadow",
         "border radius",
         "glassmorphism",
-        "css generator"
+        "css generator",
+        "text shadow generator",
+        "clip path generator",
+        "css animation generator",
+        "flexbox generator",
+        "grid generator"
       ],
       "capabilities": [
         "SIDE_PANEL"
@@ -1950,6 +1999,36 @@
       "capabilities": [
         "SIDE_PANEL",
         "COMMAND"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "sites.script-studio",
+      "name": "Script Studio",
+      "description": "Userscript manager with editor, GM APIs, install and update flows",
+      "category": "sites",
+      "categorySlug": "sites",
+      "slug": "script-studio",
+      "route": "/tools/sites/script-studio",
+      "icon": "Code2Icon",
+      "keywords": [
+        "userscript",
+        "tampermonkey",
+        "greasemonkey",
+        "script",
+        "gm",
+        "inject"
+      ],
+      "aliases": [
+        "script studio",
+        "userscript manager"
+      ],
+      "capabilities": [
+        "SIDE_PANEL",
+        "COMMAND",
+        "PAGE_ACCESS"
       ],
       "contextSurfaces": [],
       "shortcut": null,
@@ -2412,7 +2491,7 @@
     {
       "id": "files.file-toolkit",
       "name": "File Toolkit",
-      "description": "View CSV/JSON/text files and combine images into a PDF — all locally.",
+      "description": "Batch convert files, turn text into PDF or Word, combine images into a PDF, zip, gzip and inspect files — all locally.",
       "category": "files",
       "categorySlug": "files",
       "slug": "file-toolkit",
@@ -2420,20 +2499,96 @@
       "icon": "FolderOpenIcon",
       "keywords": [
         "file",
+        "convert",
+        "pdf",
+        "docx",
+        "word",
+        "rtf",
+        "xlsx",
+        "excel",
         "csv",
         "json",
-        "text",
-        "pdf",
+        "yaml",
+        "xml",
         "image",
-        "convert",
+        "webp",
+        "zip",
+        "gzip",
+        "checksum",
+        "base64",
         "viewer"
       ],
       "aliases": [
-        "csv viewer",
-        "json viewer",
+        "file converter",
+        "text to pdf",
+        "text to word",
+        "markdown to pdf",
+        "csv to excel",
         "image to pdf",
-        "text viewer",
-        "file viewer"
+        "image converter",
+        "zip files",
+        "unzip",
+        "gzip file",
+        "sha256 checksum",
+        "file to base64",
+        "csv viewer",
+        "json viewer"
+      ],
+      "capabilities": [
+        "SIDE_PANEL"
+      ],
+      "contextSurfaces": [],
+      "shortcut": null,
+      "status": "active"
+    },
+    {
+      "id": "files.pdf-toolkit",
+      "name": "PDF Toolkit",
+      "description": "Read, organize, merge, split, compress, sign, watermark, convert and password-protect PDFs — all on your device.",
+      "category": "files",
+      "categorySlug": "files",
+      "slug": "pdf-toolkit",
+      "route": "/tools/files/pdf-toolkit",
+      "icon": "FileTextIcon",
+      "keywords": [
+        "pdf",
+        "merge",
+        "split",
+        "compress",
+        "sign",
+        "signature",
+        "watermark",
+        "page numbers",
+        "rotate",
+        "reorder",
+        "extract pages",
+        "password",
+        "encrypt",
+        "unlock",
+        "form",
+        "acrobat"
+      ],
+      "aliases": [
+        "pdf editor",
+        "pdf viewer",
+        "merge pdf",
+        "combine pdf",
+        "split pdf",
+        "compress pdf",
+        "reduce pdf size",
+        "sign pdf",
+        "fill pdf form",
+        "pdf to jpg",
+        "pdf to png",
+        "pdf to word",
+        "pdf to text",
+        "rotate pdf",
+        "delete pdf pages",
+        "add page numbers",
+        "watermark pdf",
+        "protect pdf",
+        "unlock pdf",
+        "remove pdf password"
       ],
       "capabilities": [
         "SIDE_PANEL"

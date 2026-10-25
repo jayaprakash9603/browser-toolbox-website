@@ -43,7 +43,11 @@ export function Cursor() {
         dotX(event.clientX)
         dotY(event.clientY)
 
-        applyTarget((event.target as Element | null)?.closest?.('[data-cursor], a, button, [role="button"]') ?? null)
+        applyTarget(
+          (event.target as Element | null)?.closest?.(
+            '[data-cursor], a, button, [role="button"]',
+          ) ?? null,
+        )
       }
       const applyTarget = (target: Element | null) => {
         if (target === activeTarget) return

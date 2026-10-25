@@ -41,7 +41,17 @@ export function Preloader({ toolCount }: { toolCount: number }) {
         .timeline({ defaults: { ease: 'expo.inOut' }, onComplete: () => setMounted(false) })
         .set(root, { autoAlpha: 1 })
         .from(strokes, { drawSVG: '0%', duration: 1, stagger: 0.12, ease: 'power2.inOut' })
-        .from(dots, { scale: 0, transformOrigin: '50% 50%', duration: 0.5, stagger: 0.06, ease: 'back.out(3)' }, 0.5)
+        .from(
+          dots,
+          {
+            scale: 0,
+            transformOrigin: '50% 50%',
+            duration: 0.5,
+            stagger: 0.06,
+            ease: 'back.out(3)',
+          },
+          0.5,
+        )
         .to(
           state,
           {
@@ -54,8 +64,16 @@ export function Preloader({ toolCount }: { toolCount: number }) {
           },
           0,
         )
-        .from('[data-intro-meta]', { yPercent: 120, duration: 0.7, stagger: 0.08, ease: 'expo.out' }, 0.1)
-        .to('[data-intro-content]', { opacity: 0, scale: 0.96, duration: 0.45, ease: 'power2.in' }, 1.3)
+        .from(
+          '[data-intro-meta]',
+          { yPercent: 120, duration: 0.7, stagger: 0.08, ease: 'expo.out' },
+          0.1,
+        )
+        .to(
+          '[data-intro-content]',
+          { opacity: 0, scale: 0.96, duration: 0.45, ease: 'power2.in' },
+          1.3,
+        )
         .add(() => markIntroDone(), 1.45)
         .to('[data-intro-top]', { yPercent: -100, duration: 0.9 }, 1.4)
         .to('[data-intro-bottom]', { yPercent: 100, duration: 0.9 }, 1.4)
@@ -74,7 +92,10 @@ export function Preloader({ toolCount }: { toolCount: number }) {
     >
       <div data-intro-top="" className="absolute inset-x-0 top-0 h-1/2 bg-canvas" />
       <div data-intro-bottom="" className="absolute inset-x-0 bottom-0 h-1/2 bg-canvas" />
-      <div data-intro-content="" className="absolute inset-0 flex flex-col justify-between p-6 md:p-10">
+      <div
+        data-intro-content=""
+        className="absolute inset-0 flex flex-col justify-between p-6 md:p-10"
+      >
         <div className="flex justify-between overflow-hidden font-mono text-xs uppercase tracking-[0.3em] text-muted">
           <span data-intro-meta="">One Panel</span>
           <span data-intro-meta="">Loading {toolCount} tools</span>
@@ -88,7 +109,10 @@ export function Preloader({ toolCount }: { toolCount: number }) {
               Local-first · Manifest V3
             </span>
           </span>
-          <span data-counter="" className="font-mono text-6xl font-medium tabular-nums text-ink md:text-8xl">
+          <span
+            data-counter=""
+            className="font-mono text-6xl font-medium tabular-nums text-ink md:text-8xl"
+          >
             000
           </span>
         </div>

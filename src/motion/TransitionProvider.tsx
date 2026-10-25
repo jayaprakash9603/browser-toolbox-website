@@ -1,7 +1,15 @@
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
-import { createContext, useCallback, useContext, useLayoutEffect, useMemo, useRef, type ReactNode } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  type ReactNode,
+} from 'react'
 
 import { gsap, prefersReducedMotion, ScrollTrigger } from './gsap'
 import { setNavigationKind } from './navigation'
@@ -125,7 +133,12 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
         .timeline({ defaults: { ease: 'expo.inOut' } })
         .set(curtain, { autoAlpha: 1 })
         .fromTo(layers, { yPercent: 100 }, { yPercent: 0, duration: 0.7, stagger: 0.08 })
-        .fromTo(labelRef.current, { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.6 }, '-=0.35')
+        .fromTo(
+          labelRef.current,
+          { yPercent: 100, opacity: 0 },
+          { yPercent: 0, opacity: 1, duration: 0.6 },
+          '-=0.35',
+        )
         .add(async () => {
           router.push(href)
           await waitForCommit()
@@ -156,7 +169,10 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
         className="pointer-events-none invisible fixed inset-0 z-[80] overflow-hidden"
       >
         <div data-curtain-layer="" className="absolute inset-0 bg-indigo" />
-        <div data-curtain-layer="" className="absolute inset-0 flex items-end bg-canvas p-6 md:p-12">
+        <div
+          data-curtain-layer=""
+          className="absolute inset-0 flex items-end bg-canvas p-6 md:p-12"
+        >
           <div className="overflow-hidden">
             <span
               ref={labelRef}

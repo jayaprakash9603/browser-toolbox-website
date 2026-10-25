@@ -6,6 +6,7 @@
 @source '../motion';
 @source '../lib';
 @source '../content';
+@source '../tool-pages';
 
 /* Hover on pointer devices or keyboard focus of the parent `.group`. */
 @custom-variant tile-on {
@@ -254,6 +255,170 @@ html[data-intro='skip'] [data-preloader] {
   from {
     opacity: 0;
     transform: translateY(32px);
+  }
+}
+
+/* Tool page effects ------------------------------------------------------- */
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(-12%, -6%, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(12%, 6%, 0) rotate(180deg) scale(1.15);
+  }
+  100% {
+    transform: translate3d(-12%, -6%, 0) rotate(360deg) scale(1);
+  }
+}
+@keyframes beam-sweep {
+  from {
+    transform: translateY(-110%);
+  }
+  to {
+    transform: translateY(110%);
+  }
+}
+@keyframes meteor {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-640px);
+    opacity: 0;
+  }
+}
+@keyframes grid-scroll {
+  to {
+    background-position: 0 64px;
+  }
+}
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes float-y {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes pulse-ring {
+  from {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.demo-caret::after {
+  content: '';
+  display: inline-block;
+  width: 1.5px;
+  height: 1em;
+  margin-left: 1px;
+  vertical-align: -0.15em;
+  background: currentColor;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255 255 255 / 0.22);
+}
+
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes beam-rotate {
+  to {
+    --beam-angle: 360deg;
+  }
+}
+/* Light that travels around a card's border. */
+.border-beam {
+  position: relative;
+}
+.border-beam::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from var(--beam-angle), transparent 72%, var(--accent), transparent 96%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: beam-rotate 5s linear infinite;
+  pointer-events: none;
+}
+
+/* RGB-split glitch for security pages; `data-text` mirrors the content. */
+.glitch {
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.glitch::before {
+  color: var(--color-cyan);
+  clip-path: inset(0 0 55% 0);
+  animation: glitch-a 3.2s steps(2) infinite;
+}
+.glitch::after {
+  color: var(--color-rose);
+  clip-path: inset(55% 0 0 0);
+  animation: glitch-b 2.7s steps(2) infinite;
+}
+@keyframes glitch-a {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  92% {
+    transform: translate(-3px, -1px);
+    opacity: 0.8;
+  }
+  96% {
+    transform: translate(2px, 1px);
+    opacity: 0.8;
+  }
+}
+@keyframes glitch-b {
+  0%,
+  88%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  91% {
+    transform: translate(3px, 1px);
+    opacity: 0.8;
+  }
+  95% {
+    transform: translate(-2px, 0);
+    opacity: 0.8;
   }
 }
 

@@ -53,7 +53,9 @@ export function ToolCard({ tool, className, categoryName, size = 'md' }: ToolCar
       </div>
       <div>
         {categoryName ? (
-          <p className="mb-2 font-mono text-[10.5px] uppercase tracking-[0.2em] text-muted">{categoryName}</p>
+          <p className="mb-2 font-mono text-[10.5px] uppercase tracking-[0.2em] text-muted">
+            {categoryName}
+          </p>
         ) : null}
         <h3 data-vt="title" className="text-lg font-medium tracking-tight text-ink">
           {tool.name}

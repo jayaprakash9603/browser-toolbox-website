@@ -20,7 +20,16 @@ interface CategoryHeroProps {
   crumbs: Crumb[]
 }
 
-export function CategoryHero({ name, description, icon, accent, index, total, toolCount, crumbs }: CategoryHeroProps) {
+export function CategoryHero({
+  name,
+  description,
+  icon,
+  accent,
+  index,
+  total,
+  toolCount,
+  crumbs,
+}: CategoryHeroProps) {
   const rootRef = useRef<HTMLElement>(null)
 
   useGSAP(
@@ -29,9 +38,17 @@ export function CategoryHero({ name, description, icon, accent, index, total, to
       if (!root) return
       const mm = gsap.matchMedia()
       mm.add(MOTION_QUERIES.motion, () => {
-        const split = SplitText.create('[data-category-title]', { type: 'lines,chars', mask: 'lines', linesClass: 'split-mask' })
+        const split = SplitText.create('[data-category-title]', {
+          type: 'lines,chars',
+          mask: 'lines',
+          linesClass: 'split-mask',
+        })
         const strokes = root.querySelectorAll('[data-category-icon] svg > *')
-        const tl = gsap.timeline({ paused: true, delay: getNavigationKind() === 'curtain' ? 0.5 : 0.1, defaults: { ease: 'expo.out' } })
+        const tl = gsap.timeline({
+          paused: true,
+          delay: getNavigationKind() === 'curtain' ? 0.5 : 0.1,
+          defaults: { ease: 'expo.out' },
+        })
         tl.from(split.chars, { yPercent: 118, duration: 1.1, stagger: 0.025 }, 0)
           .from(strokes, { drawSVG: '0%', duration: 1.8, stagger: 0.12, ease: 'power2.inOut' }, 0.1)
           .from('[data-category-icon]', { scale: 0.7, rotate: -10, duration: 1.8 }, 0.1)
@@ -63,7 +80,10 @@ export function CategoryHero({ name, description, icon, accent, index, total, to
       style={{ '--accent': accent } as CSSProperties}
       className="relative overflow-hidden pb-16 pt-32 md:pb-24 md:pt-44"
     >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden [mask-image:linear-gradient(to_bottom,black_35%,transparent)]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden [mask-image:linear-gradient(to_bottom,black_35%,transparent)]"
+      >
         <div
           className="absolute -right-40 top-0 size-[760px] rounded-full opacity-50 blur-3xl"
           style={{ background: `radial-gradient(circle, ${accent}38, transparent 65%)` }}
@@ -74,16 +94,26 @@ export function CategoryHero({ name, description, icon, accent, index, total, to
           <div data-category-fade="">
             <Breadcrumbs items={crumbs} />
           </div>
-          <p data-category-fade="" className="mt-10 font-mono text-[11px] uppercase tracking-[0.28em] text-muted">
-            Category <span className="text-ink">{String(index + 1).padStart(2, '0')}</span> of {total}
+          <p
+            data-category-fade=""
+            className="mt-10 font-mono text-[11px] uppercase tracking-[0.28em] text-muted"
+          >
+            Category <span className="text-ink">{String(index + 1).padStart(2, '0')}</span> of{' '}
+            {total}
           </p>
-          <h1 data-category-title="" className="mt-5 text-[clamp(2.5rem,8.5vw,9rem)] font-medium leading-[0.92] tracking-[-0.06em] [overflow-wrap:anywhere]">
+          <h1
+            data-category-title=""
+            className="mt-5 text-[clamp(2.5rem,8.5vw,9rem)] font-medium leading-[0.92] tracking-[-0.06em] [overflow-wrap:anywhere]"
+          >
             {name}
           </h1>
           <div data-category-fade="" className="mt-8 flex flex-wrap items-end gap-x-10 gap-y-4">
-            <p className="max-w-xl text-lg leading-relaxed text-ink-soft md:text-xl">{description}</p>
+            <p className="max-w-xl text-lg leading-relaxed text-ink-soft md:text-xl">
+              {description}
+            </p>
             <p className="font-mono text-sm text-muted">
-              <span className="text-3xl font-medium tracking-tight text-ink">{toolCount}</span> {toolCount === 1 ? 'tool' : 'tools'}
+              <span className="text-3xl font-medium tracking-tight text-ink">{toolCount}</span>{' '}
+              {toolCount === 1 ? 'tool' : 'tools'}
             </p>
           </div>
         </div>

@@ -18,7 +18,11 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
     title: 'Core',
     summary: 'What the side panel, menus and page tools need to exist at all.',
     permissions: [
-      { name: 'sidePanel', kind: 'required', why: 'The side panel is the main interface of the extension.' },
+      {
+        name: 'sidePanel',
+        kind: 'required',
+        why: 'The side panel is the main interface of the extension.',
+      },
       {
         name: 'storage',
         kind: 'required',
@@ -39,7 +43,11 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
         kind: 'required',
         why: 'Injects the page-tools helper and the form autofill runtime on demand, and registers ad-blocking and protection scripts while those features are on.',
       },
-      { name: 'tabs', kind: 'required', why: 'Reads the active tab’s URL and title, and powers Tab Manager and Browser Toolkit actions.' },
+      {
+        name: 'tabs',
+        kind: 'required',
+        why: 'Reads the active tab’s URL and title, and powers Tab Manager and Browser Toolkit actions.',
+      },
     ],
   },
   {
@@ -52,7 +60,11 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
         kind: 'required',
         why: 'Clipboard tools read the current text when you press a button, paste or focus the panel, plus optional “Analyze clipboard” suggestions. History stays on the device and can be disabled or wiped in Settings.',
       },
-      { name: 'clipboardWrite', kind: 'required', why: 'Copy buttons write results back to the clipboard.' },
+      {
+        name: 'clipboardWrite',
+        kind: 'required',
+        why: 'Copy buttons write results back to the clipboard.',
+      },
     ],
   },
   {
@@ -71,7 +83,11 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
         why: 'Runs an offscreen document for work a service worker cannot do, such as handling recording streams, blobs and audio playback.',
       },
       { name: 'tabCapture', kind: 'required', why: 'Lets Screen Recorder record the current tab.' },
-      { name: 'desktopCapture', kind: 'required', why: 'Lets Screen Recorder record a window or screen you pick in Chrome’s own chooser.' },
+      {
+        name: 'desktopCapture',
+        kind: 'required',
+        why: 'Lets Screen Recorder record a window or screen you pick in Chrome’s own chooser.',
+      },
     ],
   },
   {
@@ -149,6 +165,16 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
   },
 ]
 
-export const NOT_REQUESTED = ['cookies', 'history', 'bookmarks', 'sessions', 'identity', 'geolocation']
+export const NOT_REQUESTED = [
+  'cookies',
+  'history',
+  'bookmarks',
+  'sessions',
+  'identity',
+  'geolocation',
+]
 
-export const PERMISSION_COUNT = PERMISSION_GROUPS.reduce((total, group) => total + group.permissions.length, 0)
+export const PERMISSION_COUNT = PERMISSION_GROUPS.reduce(
+  (total, group) => total + group.permissions.length,
+  0,
+)

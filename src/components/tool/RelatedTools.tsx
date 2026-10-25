@@ -10,7 +10,13 @@ import { Reveal } from '@/motion/Reveal'
 
 import { ToolCard } from './ToolCard'
 
-export function RelatedTools({ tools, categoryNames }: { tools: Tool[]; categoryNames: Record<string, string> }) {
+export function RelatedTools({
+  tools,
+  categoryNames,
+}: {
+  tools: Tool[]
+  categoryNames: Record<string, string>
+}) {
   const trackRef = useRef<HTMLDivElement>(null)
   const [edges, setEdges] = useState({ start: true, end: false })
 
@@ -36,7 +42,10 @@ export function RelatedTools({ tools, categoryNames }: { tools: Tool[]; category
     const track = trackRef.current
     const card = track?.querySelector<HTMLElement>('[data-related-card]')
     if (!track || !card) return
-    track.scrollBy({ left: direction * (card.offsetWidth + 16), behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
+    track.scrollBy({
+      left: direction * (card.offsetWidth + 16),
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+    })
   }
 
   return (
@@ -44,7 +53,10 @@ export function RelatedTools({ tools, categoryNames }: { tools: Tool[]; category
       <div className="mx-auto flex max-w-7xl items-end justify-between gap-6 px-6 md:px-10">
         <div>
           <ChapterLabel>Keep going</ChapterLabel>
-          <h2 id="related-title" className="mt-5 text-4xl font-medium tracking-[-0.045em] md:text-5xl">
+          <h2
+            id="related-title"
+            className="mt-5 text-4xl font-medium tracking-[-0.045em] md:text-5xl"
+          >
             Pairs well with
           </h2>
         </div>
@@ -73,9 +85,16 @@ export function RelatedTools({ tools, categoryNames }: { tools: Tool[]; category
         ref={trackRef}
         className="no-scrollbar mt-12 snap-x snap-mandatory overflow-x-auto scroll-px-6 md:scroll-px-10"
       >
-        <Reveal className="flex w-max gap-4 px-6 md:px-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))]" y={36}>
+        <Reveal
+          className="flex w-max gap-4 px-6 md:px-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))]"
+          y={36}
+        >
           {tools.map((tool) => (
-            <div key={tool.id} data-related-card="" className="w-[78vw] max-w-[340px] shrink-0 snap-start sm:w-[340px]">
+            <div
+              key={tool.id}
+              data-related-card=""
+              className="w-[78vw] max-w-[340px] shrink-0 snap-start sm:w-[340px]"
+            >
               <ToolCard tool={tool} categoryName={categoryNames[tool.category]} />
             </div>
           ))}

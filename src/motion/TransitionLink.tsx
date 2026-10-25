@@ -13,29 +13,28 @@ type TransitionLinkProps = Omit<ComponentProps<typeof Link>, 'href'> & {
   transitionLabel?: string
 }
 
-export const TransitionLink = forwardRef<HTMLAnchorElement, TransitionLinkProps>(function TransitionLink(
-  { href, morph = false, transitionLabel, onClick, ...props },
-  ref,
-) {
-  const navigate = useTransitionNavigate()
+export const TransitionLink = forwardRef<HTMLAnchorElement, TransitionLinkProps>(
+  function TransitionLink({ href, morph = false, transitionLabel, onClick, ...props }, ref) {
+    const navigate = useTransitionNavigate()
 
-  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    onClick?.(event)
-    if (
-      event.defaultPrevented ||
-      event.button !== 0 ||
-      event.metaKey ||
-      event.ctrlKey ||
-      event.shiftKey ||
-      event.altKey ||
-      props.target === '_blank' ||
-      /^https?:\/\//.test(href)
-    ) {
-      return
+    const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+      onClick?.(event)
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        props.target === '_blank' ||
+        /^https?:\/\//.test(href)
+      ) {
+        return
+      }
+      event.preventDefault()
+      navigate(href, { morph: morph ? event.currentTarget : null, label: transitionLabel })
     }
-    event.preventDefault()
-    navigate(href, { morph: morph ? event.currentTarget : null, label: transitionLabel })
-  }
 
-  return <Link ref={ref} href={href} onClick={handleClick} {...props} />
-})
+    return <Link ref={ref} href={href} onClick={handleClick} {...props} />
+  },
+)

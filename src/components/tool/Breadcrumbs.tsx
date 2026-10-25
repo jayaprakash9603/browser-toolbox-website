@@ -21,7 +21,11 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
             ) : null}
             <li>
               {item.href ? (
-                <TransitionLink href={item.href} transitionLabel={item.label} className="transition-colors hover:text-ink">
+                <TransitionLink
+                  href={item.href}
+                  transitionLabel={item.label}
+                  className="transition-colors hover:text-ink"
+                >
                   {item.label}
                 </TransitionLink>
               ) : (
