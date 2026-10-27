@@ -117,6 +117,38 @@ body {
   border-radius: 6px;
 }
 
+/* The palette's search row draws its own focus line; an offset outline is clipped by the dialog. */
+[cmdk-input]:focus-visible {
+  outline: none;
+}
+
+html {
+  scrollbar-color: var(--color-line-strong) var(--color-canvas);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
+
+@supports not (scrollbar-color: auto) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background: var(--color-line-strong) padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(255 255 255 / 0.28);
+  }
+}
+
 a,
 button,
 [role='button'],
