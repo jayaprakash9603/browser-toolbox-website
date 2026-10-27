@@ -7,7 +7,7 @@ export function Stats({ toolCount, categoryCount }: { toolCount: number; categor
   const stats = [
     { value: toolCount, suffix: '', label: 'Tools in one panel', note: 'Consolidated toolkits, not a wall of icons.' },
     { value: categoryCount, suffix: '', label: 'Categories', note: 'Developer, QA, design, privacy, productivity…' },
-    { value: 0, suffix: '', label: 'Trackers or analytics', note: 'No account. No remote code. No telemetry.' },
+    { value: 0, suffix: '', label: 'Trackers or analytics', note: 'No account. No telemetry.' },
     { value: 100, suffix: '%', label: 'Local processing', note: 'Hashing, JWT, images and notes stay on-device.' },
   ]
   return (

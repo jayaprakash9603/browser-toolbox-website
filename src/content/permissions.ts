@@ -53,13 +53,8 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
   {
     id: 'clipboard',
     title: 'Clipboard',
-    summary: 'Read and write the clipboard, only when you act.',
+    summary: 'Copy results to the clipboard. Reading it is optional, see below.',
     permissions: [
-      {
-        name: 'clipboardRead',
-        kind: 'required',
-        why: 'Clipboard tools read the current text when you press a button, paste or focus the panel, plus optional “Analyze clipboard” suggestions. History stays on the device and can be disabled or wiped in Settings.',
-      },
       {
         name: 'clipboardWrite',
         kind: 'required',
@@ -98,17 +93,12 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
       {
         name: 'declarativeNetRequest',
         kind: 'required',
-        why: 'Applies bundled filter rules to block ads, trackers and known phishing or malware hosts. Lists ship inside the extension; nothing is downloaded at runtime.',
+        why: 'Applies bundled filter rules to block ads, trackers and known phishing or malware hosts, only after you turn ad blocking or web protection on. Lists ship inside the extension; nothing is downloaded at runtime.',
       },
       {
         name: 'declarativeNetRequestFeedback',
         kind: 'required',
         why: 'Shows per-tab blocked-request counts on the badge and in the Ad Blocker tool.',
-      },
-      {
-        name: 'webRequest',
-        kind: 'required',
-        why: 'Observes (never blocks) requests for the HTTP Interceptor network log.',
       },
       {
         name: 'webNavigation',
@@ -140,9 +130,24 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
     summary: 'Not granted at install. Chrome asks only when you turn the feature on.',
     permissions: [
       {
+        name: 'clipboardRead',
+        kind: 'optional',
+        why: 'Asked the first time you press Paste or Read clipboard in a tool. Clipboard text is processed on the device.',
+      },
+      {
+        name: 'webRequest',
+        kind: 'optional',
+        why: 'Asked from HTTP Interceptor when you allow its network log. It observes requests and never blocks or changes them.',
+      },
+      {
         name: 'userScripts',
         kind: 'optional',
-        why: 'Registers HTTP Interceptor “Insert script” rules when you enable user scripts in its settings.',
+        why: 'Asked when you enable Script Studio or HTTP Interceptor “Insert script” rules. Runs only scripts you install or write.',
+      },
+      {
+        name: 'cookies',
+        kind: 'optional',
+        why: 'Asked only when you let Script Studio scripts use GM_cookie.',
       },
       {
         name: 'debugger',
@@ -154,19 +159,18 @@ export const PERMISSION_GROUPS: PermissionGroup[] = [
   {
     id: 'hosts',
     title: 'Site access',
-    summary: 'Why the extension can run on the sites you visit.',
+    summary: 'No site access at install. You grant it per site or for all sites.',
     permissions: [
       {
         name: '<all_urls>',
-        kind: 'host',
-        why: 'Ad blocking, web protection and site enhancements need to run on the pages you browse, and network tools need to reach the hosts you point them at. Page tools are still injected only when you start them.',
+        kind: 'optional',
+        why: 'Asked when you turn on ad blocking, web protection, page clipboard capture or a site add-on, or start a network tool such as Link Checker. You can allow just the current site instead, and revoke access in Settings.',
       },
     ],
   },
 ]
 
 export const NOT_REQUESTED = [
-  'cookies',
   'history',
   'bookmarks',
   'sessions',

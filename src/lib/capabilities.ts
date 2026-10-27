@@ -43,7 +43,7 @@ export const CAPABILITY_COPY: Record<ToolCapability, CapabilityCopy> = {
   },
 }
 
-export const DEFAULT_PRIVACY_NOTE = 'Runs entirely inside your browser. No account, no analytics, no remote code.'
+export const DEFAULT_PRIVACY_NOTE = 'Runs entirely inside your browser. No account, no analytics.'
 
 const SURFACE_COPY: Record<string, string> = {
   SELECTION: 'selected text',

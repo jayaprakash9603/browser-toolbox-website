@@ -22,8 +22,8 @@ const POINTS = [
   },
   {
     icon: EyeOffIcon,
-    title: 'No telemetry, no remote code',
-    body: 'No analytics, no account and no scripts downloaded at runtime. Network calls happen only when a tool you use needs one, like an API request you send.',
+    title: 'No telemetry, no account',
+    body: 'No analytics and nothing to sign up for. Network calls happen only when a tool you use or a feature you turn on needs one, like an API request you send.',
   },
 ]
 
@@ -78,7 +78,7 @@ export function PrivacyChapter() {
           Your data stays in your browser
         </h2>
         <ScrollWords className="mt-8 max-w-5xl text-[clamp(2rem,4.8vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.045em]">
-          Your data stays in your browser. No account, no analytics, no remote code. Just tools that run where you
+          Your data stays in your browser. No account, no analytics. Just tools that run where you
           already work.
         </ScrollWords>
 

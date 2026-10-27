@@ -1,7 +1,15 @@
 'use client'
 
 import { Command } from 'cmdk'
-import { ArrowRightIcon, FileTextIcon, HomeIcon, LayoutGridIcon, LockIcon, SearchIcon } from 'lucide-react'
+import {
+  ArrowRightIcon,
+  FileTextIcon,
+  HomeIcon,
+  LayoutGridIcon,
+  LockIcon,
+  ScaleIcon,
+  SearchIcon,
+} from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { Keycap } from '@/components/ui/primitives'
@@ -21,6 +29,7 @@ const PAGES = [
   { href: '/', label: 'Home', icon: HomeIcon },
   { href: '/tools/', label: 'All tools', icon: LayoutGridIcon },
   { href: '/privacy/', label: 'Privacy policy', icon: LockIcon },
+  { href: '/terms/', label: 'Terms and conditions', icon: ScaleIcon },
   { href: '/permissions/', label: 'Permissions explained', icon: FileTextIcon },
 ]
 

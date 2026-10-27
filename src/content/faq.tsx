@@ -21,10 +21,10 @@ export function getFaqItems(toolCount: number): FaqItem[] {
     },
     {
       question: 'Does it send my data anywhere?',
-      text: 'No analytics, no account and no remote code. Settings and history live in chrome.storage.local. Network calls happen only when a tool you use needs one, such as an API request you send.',
+      text: 'No analytics and no account. Settings and history live in chrome.storage.local. Network calls happen only when a tool you use or a feature you turn on needs one, such as an API request you send.',
       answer: (
         <>
-          There is no analytics, no account and no remote code. Settings, favourites and history
+          There is no analytics and no account. Settings, favourites and history
           live in <code className="font-mono text-ink-soft">chrome.storage.local</code> on your
           device. Network calls happen only when a tool you use needs one, such as an API request
           you send or an opt-in YouTube add-on. Read the{' '}

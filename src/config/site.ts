@@ -10,6 +10,8 @@ export const SITE = {
     process.env.NEXT_PUBLIC_CHROME_STORE_URL ?? 'https://chromewebstore.google.com/search/one%20panel',
   paletteShortcut: ['Ctrl', 'Shift', 'Space'],
   version: '1.0',
+  owner: 'J Jaya Prakash',
+  contactEmail: 'contact@quickcalci.com',
 } as const
 
 export const SOCIAL_IMAGE = {

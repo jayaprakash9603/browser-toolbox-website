@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...TOOLS.map((tool) => ({ url: url(toolHref(tool)), changeFrequency: 'monthly' as const, priority: 0.8 })),
     { url: url('/privacy/'), changeFrequency: 'yearly', priority: 0.4 },
+    { url: url('/terms/'), changeFrequency: 'yearly', priority: 0.3 },
     { url: url('/permissions/'), changeFrequency: 'yearly', priority: 0.4 },
   ]
 }

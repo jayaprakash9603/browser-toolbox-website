@@ -1,159 +1,525 @@
-import { CloudOffIcon, CodeXmlIcon, HardDriveIcon, SlidersHorizontalIcon, UserXIcon, WifiIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 
+import { ContactEmail, LegalDocument, type LegalSection } from '@/components/pages/LegalDocument'
 import { InstallStrip } from '@/components/tool/InstallStrip'
-import { ChapterLabel } from '@/components/ui/primitives'
-import { Reveal } from '@/motion/Reveal'
-import { ScrollWords } from '@/motion/ScrollWords'
-import { SplitReveal } from '@/motion/SplitReveal'
+import { SITE } from '@/config/site'
 import { TransitionLink } from '@/motion/TransitionLink'
 
 export const metadata: Metadata = {
-  title: 'Privacy',
+  title: 'Privacy Policy',
   description:
-    'One Panel has no account, no analytics and no remote code. Here is what stays on your device, when anything leaves it, and how to turn things off.',
+    'How the One Panel Chrome extension and website handle your information: what stays on your device, the few times anything leaves it, and how to reach us.',
   alternates: { canonical: '/privacy/' },
 }
 
-const PRINCIPLES = [
-  { icon: UserXIcon, title: 'No account', body: 'Nothing to sign up for. The extension works the moment it is installed.' },
-  { icon: CloudOffIcon, title: 'No analytics', body: 'No telemetry, usage tracking or crash reporting is collected or sent anywhere.' },
-  { icon: CodeXmlIcon, title: 'No remote code', body: 'Every script and filter list ships inside the package. Nothing is fetched and executed at runtime.' },
-  { icon: HardDriveIcon, title: 'Local storage', body: 'Data lives in chrome.storage on this device and is removed when you uninstall the extension.' },
-]
+const LAST_UPDATED = 'October 27, 2026'
 
-const STORED = [
-  ['Settings and favourites', 'Your preferences, pinned tools and recently opened tools.'],
-  ['Clipboard history', 'Text you copy, if history is on. It can be disabled, size-limited or wiped in Settings.'],
-  ['Notes, timers and tool state', 'Whatever you write or configure inside a tool, so it is there next time.'],
-  ['API history', 'Recent requests and capped responses. Credentials are not saved, and common secret fields are redacted.'],
-  ['Form autofill answers', 'Saved answers for the autofill tool. It never fills passwords, one-time codes or payment fields.'],
-  ['Short-lived handoffs', 'Element-picker results and right-click payloads live in session storage and expire after five minutes.'],
-]
-
-const LEAVES = [
+const THIRD_PARTIES: { service: string; when: string; sent: string }[] = [
   {
-    title: 'Network tools you run',
-    body: 'Some tools are network tools by nature. Sending an API request, tracing redirects, checking links or running a speed test contacts the hosts involved, and only when you start it.',
+    service: 'Websites and APIs you choose',
+    when: 'You send an API request, check links, trace redirects, download images, bundle a page or scrape data.',
+    sent: 'The request you built, sent straight from your browser to the address you entered.',
   },
   {
-    title: 'Opt-in YouTube add-ons',
-    body: 'SponsorBlock and Return YouTube Dislike are off by default. When you turn them on, they request segment and dislike data for the video you are watching from their public APIs.',
+    service: 'Cloudflare (speed.cloudflare.com)',
+    when: 'You start a speed test.',
+    sent: 'Test traffic, plus your IP address as part of any normal connection.',
   },
   {
-    title: 'Web protection stays local',
-    body: 'Phishing and malware checks use lists bundled with the extension. No URLs are sent to a third party to decide whether a site is safe.',
+    service: 'ipwho.is and BigDataCloud (api.bigdatacloud.net)',
+    when: 'You start a speed test.',
+    sent: 'Your IP address, to show your provider and approximate city.',
+  },
+  {
+    service: 'ipify (api.ipify.org)',
+    when: 'The Internet Monitor is on and “Show IP” is enabled.',
+    sent: 'Your IP address, to display it back to you.',
+  },
+  {
+    service: 'The ping address you choose',
+    when: 'The Internet Monitor is on.',
+    sent: 'A small connectivity check, by default to google.com.',
+  },
+  {
+    service: 'Google PageSpeed Insights',
+    when: 'You run a PageSpeed check in the SEO Toolkit.',
+    sent: 'The URL of the page you are checking.',
+  },
+  {
+    service: 'SponsorBlock (sponsor.ajay.app)',
+    when: 'You turn on SponsorBlock in the YouTube Control Panel.',
+    sent: 'The ID of the YouTube video you are watching.',
+  },
+  {
+    service: 'Return YouTube Dislike (returnyoutubedislikeapi.com)',
+    when: 'You turn on dislike counts in the YouTube Control Panel.',
+    sent: 'The ID of the YouTube video you are watching.',
+  },
+  {
+    service: 'Google Translate (translate.googleapis.com)',
+    when: 'You turn on translation in the WhatsApp add-on and translate a message.',
+    sent: 'The text of the message you asked to translate.',
+  },
+  {
+    service: 'Webhook URLs you add',
+    when: 'You add a webhook in the WhatsApp add-on and press Test.',
+    sent: 'A test event. No message content is included.',
+  },
+  {
+    service: 'Script sources you choose',
+    when: 'You install a userscript from a URL, or a script you installed checks for updates.',
+    sent: 'A normal download request to the address the script comes from.',
   },
 ]
 
-const CONTROLS = [
-  'Turn clipboard history off, or wipe it, in Settings.',
-  'Switch ad blocking and web protection off globally, or allow a single site.',
-  'Pause ad blocking on a site from the right-click menu.',
-  'Revoke optional permissions any time from chrome://extensions.',
-  'Uninstall to remove every piece of stored data.',
+const SECTIONS: LegalSection[] = [
+  {
+    id: 'about',
+    title: 'Who we are',
+    content: (
+      <>
+        <p>
+          Thank you for using One Panel. One Panel is a Chrome extension and companion website
+          built and maintained by {SITE.owner} (“we”, “us”). This policy explains, as plainly as
+          we can, what information the extension and the website at{' '}
+          <a href={SITE.url}>{SITE.url.replace(/^https?:\/\//, '')}</a> handle, why, and the
+          choices you have.
+        </p>
+        <p>
+          If you have any question about privacy, or about anything else to do with One Panel,
+          please write to <ContactEmail subject="One Panel privacy question" />. We are always happy
+          to help.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'summary',
+    title: 'The short version',
+    content: (
+      <ul>
+        <li>There is no account, no sign-up and no login.</li>
+        <li>We do not use analytics, telemetry, advertising or crash reporting.</li>
+        <li>
+          We do not run any server that receives your data, and we never sell, rent or share your
+          information.
+        </li>
+        <li>
+          Everything you create or save in One Panel stays in your browser’s storage on your own
+          device.
+        </li>
+        <li>
+          One Panel has no access to the websites you visit when it is installed. You decide which
+          sites, if any, it may work on.
+        </li>
+        <li>
+          Information only leaves your device when you start a tool or turn on a feature that has
+          to contact another service. Every one of those cases is listed below.
+        </li>
+      </ul>
+    ),
+  },
+  {
+    id: 'not-collected',
+    title: 'Information we do not collect',
+    content: (
+      <>
+        <p>
+          We do not collect, receive or store any personal information on our side. In
+          particular, we do not collect your name, email address, browsing history, the content of
+          pages you visit, your clipboard, your messages, your location, or any identifier that
+          could be used to track you.
+        </p>
+        <p>
+          Because none of this reaches us, we also cannot see, recover or hand over the data kept
+          in your copy of the extension.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'on-device',
+    title: 'Information stored on your device',
+    content: (
+      <>
+        <p>
+          To remember your work between sessions, One Panel saves the following in Chrome’s
+          extension storage (<code>chrome.storage</code>) on your computer. It is not synced to a
+          server and is removed when you uninstall the extension.
+        </p>
+        <ul>
+          <li>
+            <strong>Settings and preferences</strong>, such as your theme, favourite tools and
+            recently used tools.
+          </li>
+          <li>
+            <strong>Clipboard history</strong>, if you keep it switched on. By default it records
+            only text you copy inside One Panel. Recording text you copy on websites is a separate
+            option that is off until you enable it.
+          </li>
+          <li>
+            <strong>Things you create in tools</strong>, such as notes, tasks, timers, colour
+            palettes, saved requests, HTTP Interceptor rules and Script Studio scripts.
+          </li>
+          <li>
+            <strong>API Request Builder history</strong>: recent requests and a capped copy of their
+            responses. Credentials are not saved, and common secret fields are hidden.
+          </li>
+          <li>
+            <strong>2FA Authenticator accounts</strong>: the account names and secret keys you add,
+            so the tool can show your codes.
+          </li>
+          <li>
+            <strong>Form Autofill data</strong>: answers you save, and entries the tool remembers
+            from forms on sites you have given it access to. It never stores passwords, one-time
+            codes or payment card details.
+          </li>
+          <li>
+            <strong>Site add-on data</strong>, such as saved replies, scheduled messages, labels
+            and broadcast lists you create in the WhatsApp add-on, and your choices in the YouTube
+            and Instagram add-ons.
+          </li>
+          <li>
+            <strong>Short-lived handoffs</strong>, such as element-picker results and right-click
+            selections. These sit in session storage and expire after five minutes.
+          </li>
+        </ul>
+        <p>
+          Screenshots, recordings, converted files and exports are saved only where you choose,
+          using Chrome’s normal download flow.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'permissions',
+    title: 'Permissions and site access',
+    content: (
+      <>
+        <p>
+          Chrome extensions must ask for permissions. We keep these to what each feature truly
+          needs, and the most sensitive ones are optional.
+        </p>
+        <ul>
+          <li>
+            <strong>No site access at install.</strong> When you click the One Panel icon, a menu
+            item or a keyboard shortcut, Chrome lets the tool read only the tab you are on, and
+            only at that moment.
+          </li>
+          <li>
+            <strong>Access you grant.</strong> Ad blocking, web protection, page clipboard capture
+            and the site add-ons work across pages, so Chrome asks your permission when you turn
+            them on. You can allow just the current site or all sites.
+          </li>
+          <li>
+            <strong>Optional permissions.</strong> Reading the clipboard, the HTTP Interceptor
+            network log, user scripts, cookie access for scripts and the debugger are each
+            requested only the first time you use the feature that needs them.
+          </li>
+          <li>
+            <strong>Undo at any time.</strong> You can revoke site access in One Panel under
+            Settings › Website access, or remove any permission from <code>chrome://extensions</code>.
+          </li>
+        </ul>
+        <p>
+          A full list of every permission and the feature behind it is on our{' '}
+          <TransitionLink href="/permissions/" transitionLabel="Permissions">
+            permissions page
+          </TransitionLink>
+          .
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'leaves-device',
+    title: 'When information leaves your device',
+    content: (
+      <>
+        <p>
+          Some tools exist to talk to the network, and a few optional features rely on public
+          services. Information is sent only in the situations below, only after you start the
+          tool or turn on the feature, and directly from your browser to that service. Nothing is
+          ever sent to us.
+        </p>
+        <div className="-mx-1 overflow-x-auto">
+          <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b border-line-strong text-ink">
+                <th scope="col" className="py-3 pr-4 font-medium">
+                  Service
+                </th>
+                <th scope="col" className="py-3 pr-4 font-medium">
+                  When
+                </th>
+                <th scope="col" className="py-3 font-medium">
+                  What is sent
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {THIRD_PARTIES.map((row) => (
+                <tr key={row.service} className="border-b border-line align-top">
+                  <td className="py-3 pr-4 text-ink">{row.service}</td>
+                  <td className="py-3 pr-4">{row.when}</td>
+                  <td className="py-3">{row.sent}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          These services are run by other companies and have their own privacy policies, for
+          example <a href="https://policies.google.com/privacy">Google’s</a> and{' '}
+          <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare’s</a>. Like any website,
+          they can see your IP address when your browser connects to them.
+        </p>
+        <p>
+          A few buttons simply open another website in a new tab, such as “Share via Gmail”,
+          “Open in WhatsApp” or SEO links to Google, Ahrefs or the Wayback Machine. Nothing is sent
+          until you click them, and what happens next is covered by that website’s own policy.
+        </p>
+        <p>
+          Read Aloud uses the voices built into Chrome. If you pick an online voice, Chrome may
+          send the text to its voice provider to speak it. Voices installed on your computer work
+          offline.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'site-add-ons',
+    title: 'Site add-ons',
+    content: (
+      <>
+        <p>
+          The YouTube, Instagram, X, LinkedIn and WhatsApp add-ons are off until you turn them on.
+          Once on, they run only on that website and only change how the page looks or behaves in
+          your own browser.
+        </p>
+        <ul>
+          <li>
+            <strong>WhatsApp:</strong> the add-on works inside your signed-in WhatsApp Web tab.
+            Your chats, contacts and messages are read and processed locally in your browser to
+            power features like exports, labels, analytics and scheduled messages. They are never
+            sent to us. Exports are saved only to your computer. Translation, if you use it, is the
+            only feature that sends message text anywhere, as described above.
+          </li>
+          <li>
+            <strong>YouTube:</strong> SponsorBlock and Return YouTube Dislike send only the video
+            ID, and only when you turn them on.
+          </li>
+          <li>
+            <strong>Instagram, X and LinkedIn:</strong> these tools work on the page in front of
+            you and do not send its content anywhere.
+          </li>
+        </ul>
+        <p>
+          One Panel is an independent project. It is not affiliated with, endorsed by or
+          sponsored by Google, YouTube, Meta, Instagram, WhatsApp, X or LinkedIn, and their names
+          are used only to describe which website a feature works on.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'clipboard-capture',
+    title: 'Clipboard, screenshots and recordings',
+    content: (
+      <ul>
+        <li>
+          The clipboard is read only when you press Paste or a similar button in a tool, after
+          Chrome asks your permission the first time. Clipboard text is processed on your device.
+        </li>
+        <li>
+          Clipboard history can be paused, limited in size or cleared at any time in Settings.
+          Please keep in mind that copied text can include sensitive things such as passwords, and
+          switch history off if you would rather not keep it.
+        </li>
+        <li>
+          Screenshots and screen recordings capture only the tab, window or screen you pick, at the
+          moment you ask. Chrome shows its own picker and indicator while recording. Files are
+          saved to your computer and are not uploaded.
+        </li>
+      </ul>
+    ),
+  },
+  {
+    id: 'scripts',
+    title: 'Script Studio and user scripts',
+    content: (
+      <>
+        <p>
+          All of One Panel’s own code and its filter lists are included in the extension package.
+          Nothing is downloaded and run behind your back.
+        </p>
+        <p>
+          Script Studio is a userscript manager. It runs only scripts that you choose to install or
+          write yourself, through Chrome’s official user scripts API, and only after you grant the
+          permission and allow user scripts for One Panel in Chrome. Scripts you install are
+          written by other people. Please install scripts only from sources you trust, and review
+          what each script asks to do on the install screen.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'blocking',
+    title: 'Ad blocking and web protection',
+    content: (
+      <p>
+        Both are off until you turn them on. They use filter and threat lists that ship inside the
+        extension, and every check happens on your device. We do not send the addresses you visit
+        to anyone to decide whether a site is safe. Blocked-request counts are kept locally for the
+        badge and the Ad Blocker tool.
+      </p>
+    ),
+  },
+  {
+    id: 'chrome-web-store',
+    title: 'Chrome Web Store User Data Policy',
+    content: (
+      <>
+        <p>
+          The use of information received through One Panel adheres to the{' '}
+          <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq">
+            Chrome Web Store User Data Policy
+          </a>
+          , including its Limited Use requirements. In particular:
+        </p>
+        <ul>
+          <li>Information is used only to provide the features you use in One Panel.</li>
+          <li>
+            It is never sold, never used for advertising, and never used to determine credit
+            worthiness or for lending purposes.
+          </li>
+          <li>
+            It is not transferred to anyone, except to the services listed above when you use the
+            matching feature, or if the law requires it.
+          </li>
+          <li>No person reads your data, because it never reaches us.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'retention',
+    title: 'How long data is kept, and how to delete it',
+    content: (
+      <>
+        <p>
+          Data stays on your device until you delete it. You can remove it in any of these ways:
+        </p>
+        <ul>
+          <li>Clear individual items inside each tool, such as notes, tasks or history.</li>
+          <li>Wipe clipboard history, or reset everything, in One Panel’s Settings.</li>
+          <li>Revoke site access and optional permissions as described above.</li>
+          <li>Uninstall One Panel, which deletes all of its stored data from Chrome.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'rights',
+    title: 'Your rights and choices',
+    content: (
+      <>
+        <p>
+          Depending on where you live, laws such as the GDPR, the UK GDPR, California’s CCPA and
+          India’s Digital Personal Data Protection Act give you rights to access, correct, delete
+          or move your personal data, and to object to how it is used.
+        </p>
+        <p>
+          Because One Panel keeps your data on your own device, you can exercise these rights
+          directly: view it in the tools, export it where a tool offers export, and delete it as
+          described above. If you have any request or concern, please email{' '}
+          <ContactEmail subject="One Panel data request" /> and we will gladly help.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'security',
+    title: 'Security',
+    content: (
+      <p>
+        We follow Chrome’s security model: the extension uses Manifest V3, ships all of its own
+        code in the package, and asks for sensitive permissions only when they are needed. Your
+        data is protected by your operating system account and your Chrome profile, so please keep
+        your device and browser locked and up to date. If you believe you have found a security
+        issue, we would be grateful if you reported it privately to{' '}
+        <ContactEmail subject="One Panel security report" />.
+      </p>
+    ),
+  },
+  {
+    id: 'children',
+    title: 'Children’s privacy',
+    content: (
+      <p>
+        One Panel is a general-purpose tool and is not directed at children under 13 (or the
+        minimum age in your country). We do not knowingly collect information from children, and
+        the extension does not send personal information to us at all.
+      </p>
+    ),
+  },
+  {
+    id: 'website',
+    title: 'This website',
+    content: (
+      <p>
+        This website has no account, no analytics, no advertising and no tracking cookies. It is
+        hosted on Cloudflare, which, like any hosting provider, processes basic technical
+        information such as your IP address and browser type to deliver the pages and protect them
+        from abuse. Links to the Chrome Web Store take you to Google’s site, which has its own
+        policy.
+      </p>
+    ),
+  },
+  {
+    id: 'changes',
+    title: 'Changes to this policy',
+    content: (
+      <p>
+        If One Panel changes in a way that affects your privacy, we will update this page and the
+        “Last updated” date above before the change is released. If a change would let new kinds of
+        information leave your device, the feature will stay off until you choose to turn it on.
+      </p>
+    ),
+  },
+  {
+    id: 'contact',
+    title: 'Contact us',
+    content: (
+      <p>
+        For any question, request or concern about this policy, your data or One Panel in general,
+        please contact {SITE.owner} at <ContactEmail subject="One Panel" />. Thank you for trusting
+        One Panel.
+      </p>
+    ),
+  },
 ]
 
 export default function PrivacyPage() {
   return (
     <>
-      <section className="relative mx-auto max-w-7xl px-6 pb-16 pt-36 md:px-10 md:pt-48">
-        <div aria-hidden="true" className="pointer-events-none absolute -top-10 left-1/3 size-[560px] rounded-full bg-emerald/10 blur-3xl" />
-        <div className="relative">
-          <ChapterLabel index="00">Privacy</ChapterLabel>
-          <SplitReveal as="h1" type="chars" trigger="intro" className="mt-6 max-w-5xl text-mega font-medium tracking-[-0.055em]">
-            Private by design, not by policy.
-          </SplitReveal>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
-            One Panel was built so there is nothing to collect. This page explains what it keeps, where it keeps
-            it, and the few moments anything leaves your device.
+      <LegalDocument
+        label="Privacy"
+        title="Privacy Policy"
+        intro={
+          <p>
+            One Panel was built so there is nothing to collect. This policy explains what the
+            extension keeps, where it keeps it, and the few moments anything leaves your device.
           </p>
-        </div>
-      </section>
-
-      <section aria-label="Principles" className="mx-auto max-w-7xl px-6 py-12 md:px-10">
-        <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {PRINCIPLES.map((principle) => (
-            <article key={principle.title} className="rounded-3xl border border-line bg-surface p-7">
-              <principle.icon aria-hidden="true" className="size-6 text-emerald" strokeWidth={1.6} />
-              <h2 className="mt-10 text-xl font-medium tracking-tight">{principle.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{principle.body}</p>
-            </article>
-          ))}
-        </Reveal>
-      </section>
-
-      <section aria-labelledby="stored-title" className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <ChapterLabel index="01">On your device</ChapterLabel>
-            <h2 id="stored-title" className="mt-5 text-4xl font-medium tracking-[-0.045em] md:text-5xl">
-              What stays here
-            </h2>
-            <p className="mt-4 max-w-sm text-muted">
-              Everything below lives in <code className="font-mono text-ink-soft">chrome.storage</code> and never syncs to
-              a server.
-            </p>
-          </div>
-          <Reveal as="dl" className="border-t border-line" y={20} stagger={0.05}>
-            {STORED.map(([title, body]) => (
-              <div key={title} className="grid gap-2 border-b border-line py-6 md:grid-cols-[14rem_1fr] md:gap-8">
-                <dt className="font-medium">{title}</dt>
-                <dd className="text-muted">{body}</dd>
-              </div>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
-      <section aria-labelledby="leaves-title" className="relative overflow-hidden py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <ChapterLabel index="02">Leaving the device</ChapterLabel>
-          <h2 id="leaves-title" className="sr-only">
-            When anything leaves your device
-          </h2>
-          <ScrollWords className="mt-8 max-w-5xl text-[clamp(1.9rem,4.4vw,4rem)] font-medium leading-[1.06] tracking-[-0.045em]">
-            Data leaves your browser only when a tool you started has to talk to the network, and never to us.
-          </ScrollWords>
-          <Reveal className="mt-16 grid gap-4 md:grid-cols-3">
-            {LEAVES.map((item) => (
-              <article key={item.title} className="rounded-3xl border border-line bg-surface p-7">
-                <WifiIcon aria-hidden="true" className="size-5 text-cyan" strokeWidth={1.6} />
-                <h3 className="mt-8 text-lg font-medium tracking-tight">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
-              </article>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
-      <section aria-labelledby="controls-title" className="mx-auto max-w-7xl px-6 py-24 md:px-10">
-        <div className="grid gap-12 rounded-[32px] border border-line bg-elevated/70 p-8 md:p-14 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <SlidersHorizontalIcon aria-hidden="true" className="size-6 text-ink" strokeWidth={1.6} />
-            <h2 id="controls-title" className="mt-6 text-4xl font-medium tracking-[-0.045em]">
-              You are in control
-            </h2>
-            <p className="mt-4 text-muted">
-              Want the details on each Chrome permission?{' '}
-              <TransitionLink href="/permissions/" transitionLabel="Permissions" className="text-ink underline decoration-line-strong underline-offset-4 hover:decoration-cyan">
-                Read the permissions page
-              </TransitionLink>
-              .
-            </p>
-          </div>
-          <Reveal as="ol" className="space-y-4" y={16} stagger={0.06}>
-            {CONTROLS.map((control, index) => (
-              <li key={control} className="flex gap-4 text-lg leading-relaxed text-ink-soft">
-                <span className="font-mono text-xs leading-8 text-muted">{String(index + 1).padStart(2, '0')}</span>
-                {control}
-              </li>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
-      <InstallStrip title="Nothing to collect." body="Add One Panel to Chrome. No sign-up, no tracking, no surprises." />
+        }
+        lastUpdated={LAST_UPDATED}
+        sections={SECTIONS}
+        contactSubject="One Panel privacy question"
+      />
+      <InstallStrip
+        title="Nothing to collect."
+        body="Add One Panel to Chrome. No sign-up, no tracking, no surprises."
+      />
     </>
   )
 }

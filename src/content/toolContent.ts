@@ -372,7 +372,7 @@ export const TOOL_CONTENT: Record<string, ToolContent> = {
     useCases: ['Browse without trackers', 'Whitelist a site you support'],
   },
   'privacy.web-protection': {
-    tagline: 'Phishing, malware and scam blocking, on by default.',
+    tagline: 'Phishing, malware and scam blocking with one switch.',
     features: ['Threat lists', 'Login-page heuristics', 'Download guard', 'Trusted sites'],
     useCases: ['Stop a phishing link from a chat', 'Protect less technical family members'],
   },
