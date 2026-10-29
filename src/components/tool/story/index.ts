@@ -1,20 +1,12 @@
-export { BeforeAfter } from './BeforeAfter'
-export { Chapter, ChapterHead } from './Chapter'
-export { FactStrip, type Fact } from './FactStrip'
-export {
-  FeatureBento,
-  FeatureGrid,
-  FeatureOrbit,
-  FeatureReel,
-  FeatureStack,
-  FeatureTicker,
-  type FeatureProps,
-} from './features'
-export { KineticStatement, type KineticVariant } from './KineticStatement'
+export { ChapterHead } from './Chapter'
 export { PinnedWalkthrough, type WalkStep } from './PinnedWalkthrough'
 export { StoryShell } from './StoryShell'
-export { StoryLayout, type Backdrop, type StoryConfig } from './StoryLayout'
-export { UseCaseFan, UseCaseMarquee, UseCaseQuotes, UseCaseTilt, UseCaseTimeline } from './usecases'
+
+/** A short, verifiable fact: a value computed from the tool's real logic, never an invented metric. */
+export interface Fact {
+  value: string
+  label: string
+}
 
 /** Props every tool `Story` receives from the page. */
 export interface StoryProps {
