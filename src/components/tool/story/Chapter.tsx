@@ -4,35 +4,6 @@ import { ChapterLabel } from '@/components/ui/primitives'
 import { cn } from '@/lib/cn'
 import { SplitReveal } from '@/motion/SplitReveal'
 
-interface ChapterProps {
-  /** Short name for the chapter rail. */
-  label: string
-  children: ReactNode
-  className?: string
-  /** Absolutely positioned background layer(s). */
-  bg?: ReactNode
-  id?: string
-  wide?: boolean
-}
-
-export function Chapter({ label, children, className, bg, id, wide = false }: ChapterProps) {
-  return (
-    <section
-      id={id}
-      data-chapter={label}
-      aria-label={label}
-      className={cn('relative isolate overflow-clip', className)}
-    >
-      {bg ? <div className="absolute inset-0 -z-10">{bg}</div> : null}
-      <div
-        className={cn('mx-auto px-6 py-24 md:px-10 md:py-32', wide ? 'max-w-[90rem]' : 'max-w-7xl')}
-      >
-        {children}
-      </div>
-    </section>
-  )
-}
-
 interface ChapterHeadProps {
   index: string
   eyebrow: string
